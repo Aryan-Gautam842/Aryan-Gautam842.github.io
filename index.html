@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aryan Gautam | Engineering Portfolio</title>
+<meta name="description" content="Aryan Gautam's portfolio in computer engineering, AI research, rocket avionics, and embedded systems.">
+
+<style>
+:root {
+  --bg: #0b1020;
+  --panel: #121a2c;
+  --text: #edf2ff;
+  --muted: #a2aec5;
+  --accent: #8ab4ff;
+  --border: #29354c;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 1080px;
+  margin: auto;
+  padding: 22px 26px;
+}
+.logo { font-size: 21px; font-weight: 800; color: white; }
+.navlinks { display: flex; gap: 22px; flex-wrap: wrap; }
+.navlinks a { color: var(--muted); font-size: 14px; }
+header, main, footer {
+  max-width: 1080px;
+  margin: auto;
+  padding-left: 26px;
+  padding-right: 26px;
+}
+.hero { padding-top: 95px; padding-bottom: 85px; }
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: clamp(43px, 8vw, 76px);
+  line-height: 1.08;
+  letter-spacing: -3px;
+  margin: 20px 0;
+}
+h1 span { color: var(--accent); }
+.intro { max-width: 720px; color: var(--muted); font-size: 18px; }
+.buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+.btn {
+  display: inline-block;
+  padding: 11px 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-weight: 600;
+}
+.btn.primary { background: var(--accent); color: #0b1020; }
+section { padding-top: 48px; padding-bottom: 40px; }
+.section-label { color: var(--accent); font-size: 12px; letter-spacing: 2px; font-weight: 700; }
+h2 { font-size: 31px; letter-spacing: -1px; margin: 8px 0 25px; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 25px;
+  transition: transform .2s, border-color .2s;
+}
+.card:hover { transform: translateY(-3px); border-color: #678bc5; }
+.number { color: var(--accent); font-size: 13px; font-weight: 700; }
+h3 { font-size: 20px; margin: 8px 0; }
+.card p, .muted { color: var(--muted); }
+.tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 15px 0; }
+.tag {
+  font-size: 12px;
+  color: #c8d8f4;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+.project-link { display: inline-block; margin-top: 6px; font-weight: 600; }
+.timeline { border-left: 1px solid var(--border); margin-left: 7px; }
+.entry { padding: 0 0 30px 25px; position: relative; }
+.entry:before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 10px;
+  width: 9px;
+  height: 9px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.entry h3 { margin-top: 0; }
+.date { font-size: 13px; color: var(--accent); }
+.entry p { color: var(--muted); margin-bottom: 0; }
+.skills { display: flex; flex-wrap: wrap; gap: 10px; }
+.skill {
+  padding: 10px 14px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+}
+footer {
+  border-top: 1px solid var(--border);
+  margin-top: 55px;
+  padding-top: 28px;
+  padding-bottom: 35px;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media(max-width: 650px) {
+  .grid { grid-template-columns: 1fr; }
+  .navlinks { gap: 12px; }
+  nav { align-items: flex-start; flex-direction: column; }
+  .hero { padding-top: 60px; }
+  h1 { letter-spacing: -1.5px; }
+}
+</style>
+</head>
+
+<body>
+<nav>
+  <a class="logo" href="#">AG.</a>
+  <div class="navlinks">
+    <a href="#projects">Projects</a>
+    <a href="#research">Research</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow">Computer Engineering · AI · Research</p>
+  <h1>Hi, I'm Aryan.<br>
+    I build <span>intelligent systems.</span>
+  </h1>
+  <p class="intro">
+    I'm a Computer Engineering student at the University of
+    California, Santa Barbara, exploring the intersection of
+    artificial intelligence, embedded systems, computer architecture,
+    and experimental physics.
+  </p>
+  <div class="buttons">
+    <a class="btn primary" href="#projects">Explore my work ↓</a>
+    <a class="btn" href="https://github.com/AryanGautam842"
+       target="_blank" rel="noopener">GitHub ↗</a>
+    <a class="btn" href="https://www.linkedin.com/in/gautam1974/"
+       target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</header>
+
+<main>
+<section id="projects">
+  <p class="section-label">01 / SELECTED WORK</p>
+  <h2>Projects</h2>
+  <div class="grid">
+
+    <article class="card">
+      <span class="number">PROJECT 01</span>
+      <h3>Rocket Avionics & Telemetry</h3>
+      <p>
+        Developing FPGA-based avionics systems for rocket telemetry
+        and flight data acquisition. Integrating microcontrollers
+        and onboard sensors for real-time monitoring.
+      </p>
+      <div class="tags">
+        <span class="tag">FPGA</span>
+        <span class="tag">STM32</span>
+        <span class="tag">ESP32</span>
+        <span class="tag">Embedded Systems</span>
+      </div>
+      <span class="muted">Gaucho Rocket Project · UCSB</span>
+    </article>
+
+    <article class="card">
+      <span class="number">PROJECT 02</span>
+      <h3>MilliQan Detector Research</h3>
+      <p>
+        Investigating how temperature affects detector readings
+        for muon particles, with the goal of improving signal
+        stability, calibration, and data quality.
+      </p>
+      <div class="tags">
+        <span class="tag">Instrumentation</span>
+        <span class="tag">Electronics</span>
+        <span class="tag">Data Analysis</span>
+      </div>
+      <span class="muted">High Energy Physics · UCSB</span>
+    </article>
+
+    <article class="card">
+      <span class="number">PROJECT 03</span>
+      <h3>AI & Chatbot Memory</h3>
+      <p>
+        Compared chatbot architectures with and without memory
+        across thousands of prompts to evaluate response quality
+        and computational efficiency.
+      </p>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">pandas</span>
+        <span class="tag">scikit-learn</span>
+        <span class="tag">LLMs</span>
+      </div>
+      <a class="project-link" href="#research">Related research ↓</a>
+    </article>
+
+    <article class="card">
+      <span class="number">PROJECT 04</span>
+      <h3>BlackBerry-Inspired Push AI</h3>
+      <p>
+        Explored a hardware-inspired architecture for efficient
+        on-device LLM inference and cached memory strategies
+        to reduce redundant computation.
+      </p>
+      <div class="tags">
+        <span class="tag">AI Systems</span>
+        <span class="tag">LLMs</span>
+        <span class="tag">Efficiency</span>
+      </div>
+      <a class="project-link"
+         href="https://github.com/AryanGautam842"
+         target="_blank" rel="noopener">Explore GitHub ↗</a>
+    </article>
+
+    <article class="card">
+      <span class="number">PROJECT 05</span>
+      <h3>MoveMate</h3>
+      <p>
+        Developed a web application using React and Vite,
+        with a public demo deployment and a focus on
+        accessible, practical user experiences.
+      </p>
+      <div class="tags">
+        <span class="tag">React</span>
+        <span class="tag">Vite</span>
+        <span class="tag">JavaScript</span>
+      </div>
+      <a class="project-link"
+         href="https://github.com/AryanGautam842"
+         target="_blank" rel="noopener">Explore GitHub ↗</a>
+    </article>
+
+    <article class="card">
+      <span class="number">PROJECT 06</span>
+      <h3>Remote-Controlled Boat</h3>
+      <p>
+        Designed a boat using CAD and integrated mechanical
+        and electronic components. Programmed microcontrollers
+        for wireless communication and real-time data exchange.
+      </p>
+      <div class="tags">
+        <span class="tag">Arduino</span>
+        <span class="tag">STM32</span>
+        <span class="tag">CAD</span>
+        <span class="tag">Electronics</span>
+      </div>
+      <span class="muted">ECE Project · UCSB</span>
+    </article>
+
+    <article class="card">
+      <span class="number">PROJECT 07</span>
+      <h3>Machine Learning & Recommendations</h3>
+      <p>
+        Built product recommendation approaches, customer
+        segmentation models, and lead-conversion predictions
+        as part of a data-driven decision-making program.
+      </p>
+      <div class="tags">
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Python</span>
+        <span class="tag">Data Science</span>
+      </div>
+      <span class="muted">MIT Schwarzman College of Computing program</span>
+    </article>
+
+    <article class="card">
+      <span class="number">PROJECT 08</span>
+      <h3>Understanding Asymptotic Limits</h3>
+      <p>
+        Investigated conceptual gaps in how students learn
+        limits and developed a structured pedagogical approach
+        to build deeper mathematical understanding.
+      </p>
+      <div class="tags">
+        <span class="tag">Mathematics</span>
+        <span class="tag">Education Research</span>
+      </div>
+      <a class="project-link" href="#research">Read publication ↓</a>
+    </article>
+
+  </div>
+</section>
+
+<section id="research">
+  <p class="section-label">02 / RESEARCH & PUBLICATIONS</p>
+  <h2>Research</h2>
+  <div class="timeline">
+
+    <article class="entry">
+      <span class="date">DECEMBER 2025</span>
+      <h3>Comparative Analysis of Chatbot Architectures With and Without Memory</h3>
+      <p>
+        Evaluated chatbot response quality across 3,000 prompts,
+        using Python-based analysis to investigate the effect
+        of memory on response performance.
+      </p>
+      <p class="muted">Publication status: verify current journal status before updating.</p>
+    </article>
+
+    <article class="entry">
+      <span class="date">SEPTEMBER 2025</span>
+      <h3>From Push Email to Push AI</h3>
+      <p>
+        Explored BlackBerry-inspired efficiency in large language
+        models, including cached memory and reducing redundant
+        computation in repeated prompts.
+      </p>
+      <p class="muted">Listed as under review in the supplied CV.</p>
+    </article>
+
+    <article class="entry">
+      <span class="date">JUNE 2025</span>
+      <h3>Why Asymptotic Behavior of Limits Is Important for Students to Learn Before Differentiation</h3>
+      <p>
+        Proposed a structured approach to teaching limits and
+        strengthening conceptual understanding of asymptotic
+        behavior.
+      </p>
+      <p class="muted">International Journal of Research in Engineering & Science, as listed in CV.</p>
+    </article>
+
+  </div>
+</section>
+
+<section id="experience">
+  <p class="section-label">03 / EXPERIENCE</p>
+  <h2>What I've been working on</h2>
+  <div class="timeline">
+
+    <article class="entry">
+      <span class="date">AUGUST 2026 — PRESENT</span>
+      <h3>Gaucho Rocket Project · UCSB</h3>
+      <p>
+        FPGA-based avionics, flight telemetry, embedded hardware,
+        sensor integration, and data acquisition.
+      </p>
+    </article>
+
+    <article class="entry">
+      <span class="date">JULY 2026 — SEPTEMBER 2026</span>
+      <h3>Manufacturing Intern · Bhola Maharaj</h3>
+      <p>
+        Standardized sweet manufacturing recipes and production
+        processes, explored automation, and worked on production
+        consistency and process optimization.
+      </p>
+    </article>
+
+    <article class="entry">
+      <span class="date">DECEMBER 2025 — PRESENT</span>
+      <h3>AI Automation & Systems Intern</h3>
+      <p>
+        Worked on AI voice automation workflows, backend scripts,
+        testing, troubleshooting, and customized solutions.
+      </p>
+    </article>
+
+    <article class="entry">
+      <span class="date">OCTOBER 2025 — PRESENT</span>
+      <h3>Research Assistant · UCSB Physics</h3>
+      <p>
+        Working with the High Energy Physics group on MilliQan
+        detector research and temperature-related signal analysis.
+      </p>
+    </article>
+
+    <article class="entry">
+      <span class="date">JULY 2025 — PRESENT</span>
+      <h3>Research Branch Officer · ACM at UCSB</h3>
+      <p>
+        Mentoring students, coordinating research symposiums,
+        and connecting students with faculty research.
+      </p>
+    </article>
+
+    <article class="entry">
+      <span class="date">SEPTEMBER 2025 — PRESENT</span>
+      <h3>Resident Assistant · UCSB</h3>
+      <p>
+        Supporting residents, facilitating community programs,
+        resolving conflicts, and strengthening student engagement.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section id="skills">
+  <p class="section-label">04 / TOOLKIT</p>
+  <h2>Technical skills</h2>
+  <div class="skills">
+    <span class="skill">Python</span>
+    <span class="skill">C++</span>
+    <span class="skill">SQL</span>
+    <span class="skill">R</span>
+    <span class="skill">React</span>
+    <span class="skill">Flask</span>
+    <span class="skill">PyTorch</span>
+    <span class="skill">TensorFlow</span>
+    <span class="skill">pandas</span>
+    <span class="skill">scikit-learn</span>
+    <span class="skill">Git & GitHub</span>
+    <span class="skill">Linux / Unix</span>
+    <span class="skill">Docker</span>
+    <span class="skill">Arduino</span>
+    <span class="skill">STM32</span>
+    <span class="skill">ESP32</span>
+    <span class="skill">Embedded Systems</span>
+    <span class="skill">Computer Architecture</span>
+    <span class="skill">Machine Learning</span>
+    <span class="skill">Data Analysis</span>
+  </div>
+</section>
+
+<section id="contact">
+  <p class="section-label">05 / GET IN TOUCH</p>
+  <h2>Let's connect.</h2>
+  <p class="intro">
+    Interested in AI systems, computer engineering, embedded
+    hardware, or research collaborations? I'd love to connect.
+  </p>
+  <div class="buttons">
+    <a class="btn primary" href="mailto:aryangautam@ucsb.edu">Email me ↗</a>
+    <a class="btn" href="https://www.linkedin.com/in/gautam1974/"
+       target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="btn" href="https://github.com/AryanGautam842"
+       target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p> Aryan Gautam · Computer Engineering · UC Santa Barbara</p>
+  <p>Designed and built with HTML and CSS.</p>
+</footer>
+</body>
+</html>
