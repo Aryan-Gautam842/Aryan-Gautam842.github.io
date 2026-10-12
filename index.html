@@ -4,467 +4,560 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aryan Gautam | Engineering Portfolio</title>
-<meta name="description" content="Aryan Gautam's portfolio in computer engineering, AI research, rocket avionics, and embedded systems.">
+<title>Aryan Gautam | Gautam City</title>
+<meta name="description" content="Aryan Gautam — UCSB Computer Engineering student building rocket avionics, particle detectors, CPUs, and AI systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
+/* Layout: professional-profile style — navy utility bar, white nav, navy title band,
+   photo + profile column with stat block, then alternating white / pale-blue sections. */
 :root {
-  --bg: #0b1020;
-  --panel: #121a2c;
-  --text: #edf2ff;
-  --muted: #a2aec5;
-  --accent: #8ab4ff;
-  --border: #29354c;
+  color-scheme: light;
+  --navy-dark: #0e1830;
+  --navy: #152447;
+  --navy-2: #1f3263;
+  --gold: #b8913a;
+  --ink: #18213a;
+  --muted: #5d6679;
+  --faint: #8a93a6;
+  --line: #e1e6ef;
+  --paper: #ffffff;
+  --tint: #f3f7fd;
+
+  --f-serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --f-sans: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --wrap: 1180px;
+  --gutter: clamp(18px, 4vw, 32px);
 }
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 16px;
   line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  max-width: 1080px;
-  margin: auto;
-  padding: 22px 26px;
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible, .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: var(--gutter); }
+
+/* ---------- Top utility bar ---------- */
+.topbar { background: var(--navy-dark); color: #aab3c6; font-size: 13px; letter-spacing: 1.2px; }
+.topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 42px; flex-wrap: wrap; }
+.topbar .places { display: flex; align-items: center; gap: 12px; text-transform: uppercase; flex-wrap: wrap; }
+.topbar .places svg { width: 13px; height: 13px; fill: var(--gold); }
+.topbar .dot { color: #5f6a83; }
+.topbar .mail { letter-spacing: .3px; display: inline-flex; align-items: center; gap: 7px; }
+.topbar .mail svg { width: 14px; height: 14px; stroke: #aab3c6; fill: none; stroke-width: 1.6; }
+.topbar .mail:hover { color: #fff; }
+
+/* ---------- Main nav ---------- */
+.nav { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20; }
+.nav .wrap { display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 92px; flex-wrap: wrap; padding-block: 12px; }
+.brand { display: flex; flex-direction: column; line-height: 1; }
+.brand .name { font-family: var(--f-serif); font-weight: 500; font-size: 30px; letter-spacing: 2.5px; color: var(--navy); font-variant: small-caps; }
+.brand .name b { color: #6aa9d8; font-weight: 500; }
+.brand .sub { font-size: 10.5px; letter-spacing: 2.6px; color: var(--muted); margin-top: 8px; text-transform: uppercase; }
+.menu { display: flex; gap: clamp(18px, 3vw, 38px); flex-wrap: wrap; }
+.menu a { font-size: 14.5px; font-weight: 500; letter-spacing: .6px; text-transform: uppercase; color: var(--ink); padding: 6px 0; border-bottom: 2px solid transparent; }
+.menu a:hover, .menu a.active { color: var(--navy); border-bottom-color: var(--navy); }
+
+/* ---------- Title band ---------- */
+.band {
+  background: linear-gradient(180deg, var(--navy) 0%, #182a52 100%);
+  color: #fff;
+  position: relative; overflow: hidden;
 }
-.logo { font-size: 21px; font-weight: 800; color: white; }
-.navlinks { display: flex; gap: 22px; flex-wrap: wrap; }
-.navlinks a { color: var(--muted); font-size: 14px; }
-header, main, footer {
-  max-width: 1080px;
-  margin: auto;
-  padding-left: 26px;
-  padding-right: 26px;
+.band::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(700px 360px at 85% 30%, rgba(106,169,216,.18), transparent 70%);
 }
-.hero { padding-top: 95px; padding-bottom: 85px; }
-.eyebrow {
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+.band .wrap { position: relative; z-index: 1; padding-block: 64px 72px; }
+.crumbs { font-size: 14px; color: #b7c0d4; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.crumbs span[aria-hidden] { color: #7c88a3; }
+.crumbs .here { color: #d7deec; }
+.band h1 { font-family: var(--f-serif); font-weight: 600; font-size: clamp(40px, 6vw, 66px); line-height: 1.1; margin: 26px 0 16px; letter-spacing: -.5px; text-wrap: balance; }
+.band h1 em { font-style: italic; color: #d9b968; font-weight: 500; }
+.band .role { font-size: 18px; color: #c9d1e2; margin: 0; }
+
+/* ---------- Profile ---------- */
+.profile .wrap { display: grid; grid-template-columns: 370px 1fr; gap: 56px; padding-block: 92px 88px; align-items: start; }
+.portrait { margin: 0; aspect-ratio: 370 / 494; border-radius: 8px; overflow: hidden; position: relative; background: var(--tint); max-width: 100%; }
+.portrait img { width: 100%; height: 100%; object-fit: cover; }
+.profile .info { min-width: 0; }
+.kicker { font-size: 12.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--navy-2); margin: 0; }
+.profile h2 { font-family: var(--f-serif); font-weight: 600; font-size: clamp(34px, 4vw, 46px); color: var(--navy); margin: 14px 0 6px; line-height: 1.15; letter-spacing: -.3px; }
+.lede { font-size: 19px; color: var(--muted); margin: 0; max-width: 62ch; }
+
+.stats {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 40px;
+  border-left: 3px solid var(--gold); padding: 10px 0 10px 30px; margin: 40px 0 46px;
 }
-h1 {
-  font-size: clamp(43px, 8vw, 76px);
-  line-height: 1.08;
-  letter-spacing: -3px;
-  margin: 20px 0;
+.stat .num { font-family: var(--f-serif); font-weight: 600; font-size: 32px; color: var(--navy); line-height: 1.1; font-variant-numeric: oldstyle-nums; }
+.stat .num sup { font-weight: 400; font-size: .7em; vertical-align: .35em; }
+.stat .cap { font-size: 13.5px; font-weight: 500; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+
+.about h3 { font-family: var(--f-sans); font-size: 19px; font-weight: 600; margin: 0 0 14px; color: var(--ink); }
+.about p { margin: 0 0 16px; font-size: 17px; color: #333b4f; text-align: justify; hyphens: auto; }
+
+/* ---------- Generic section ---------- */
+section.block { padding-block: clamp(72px, 9vw, 104px); }
+section.tint { background: var(--tint); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.head { margin-bottom: 44px; max-width: 760px; }
+.head h2 { font-family: var(--f-serif); font-weight: 600; font-size: clamp(32px, 4vw, 42px); color: var(--navy); margin: 12px 0 10px; line-height: 1.15; }
+.head p { color: var(--muted); font-size: 17px; margin: 0; }
+.rule { width: 56px; height: 3px; background: var(--gold); margin-top: 18px; }
+
+/* ---------- Photo slots ---------- */
+.shot { margin: 0; position: relative; overflow: hidden; background: #e9eef7; aspect-ratio: 4 / 3; max-width: 100%; border-radius: 6px; }
+.shot img { width: 100%; height: 100%; object-fit: cover; }
+.ph {
+  display: none; position: absolute; inset: 0;
+  align-items: center; justify-content: center; flex-direction: column; gap: 8px; padding: 16px;
+  background: linear-gradient(160deg, #e9eef7, #dbe4f2);
+  font-size: 13px; color: var(--muted); text-align: center;
 }
-h1 span { color: var(--accent); }
-.intro { max-width: 720px; color: var(--muted); font-size: 18px; }
-.buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
-.btn {
-  display: inline-block;
-  padding: 11px 18px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-weight: 600;
+.ph svg { width: 34px; height: 34px; stroke: var(--navy-2); fill: none; stroke-width: 1.4; }
+.ph code { font-size: 12px; color: var(--navy); background: #fff; padding: 2px 7px; border-radius: 4px; border: 1px solid var(--line); }
+.empty .ph { display: flex; }
+
+/* ---------- Featured projects ---------- */
+.featured { display: grid; gap: 28px; }
+.feature {
+  display: grid; grid-template-columns: 1fr 1.1fr; gap: 44px; align-items: center;
+  background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 28px;
 }
-.btn.primary { background: var(--accent); color: #0b1020; }
-section { padding-top: 48px; padding-bottom: 40px; }
-.section-label { color: var(--accent); font-size: 12px; letter-spacing: 2px; font-weight: 700; }
-h2 { font-size: 31px; letter-spacing: -1px; margin: 8px 0 25px; }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+.feature:nth-child(even) .shot { order: 2; }
+.feature .body { min-width: 0; }
+.feature h3 { font-family: var(--f-serif); font-weight: 600; font-size: clamp(25px, 2.6vw, 30px); color: var(--navy); margin: 10px 0 12px; line-height: 1.2; }
+.feature p { color: var(--muted); margin: 0 0 16px; }
+.points { list-style: none; margin: 0 0 20px; padding: 0 0 0 20px; border-left: 2px solid var(--gold); display: grid; gap: 6px; }
+.points li { font-size: 15.5px; color: #333b4f; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag { font-size: 11.5px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--navy-2); border: 1px solid #cdd6e6; border-radius: 3px; padding: 4px 9px; }
+
+.more { font-size: 12.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--navy-2); margin: 72px 0 22px; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.card { display: flex; flex-direction: column; gap: 12px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 16px 16px 22px; transition: box-shadow .2s, transform .2s; }
+.card:hover { box-shadow: 0 18px 36px -24px rgba(21,36,71,.45); transform: translateY(-2px); }
+.card .shot { aspect-ratio: 16 / 9; }
+.card h3 { font-family: var(--f-serif); font-weight: 600; font-size: 21px; color: var(--navy); margin: 4px 0 0; line-height: 1.25; }
+.card p { color: var(--muted); font-size: 15px; margin: 0; flex: 1; }
+.card .foot { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 13px; color: var(--faint); border-top: 1px solid var(--line); padding-top: 12px; }
+.card .foot a { color: var(--navy); font-weight: 600; }
+.card .foot a:hover { color: var(--gold); }
+
+/* ---------- Research ---------- */
+.paper { display: grid; grid-template-columns: 130px 1fr auto; gap: 28px; padding: 28px 0; border-bottom: 1px solid var(--line); align-items: start; }
+.paper:first-child { border-top: 1px solid var(--line); }
+.paper .date { font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); padding-top: 4px; }
+.paper .body { min-width: 0; }
+.paper h3 { font-family: var(--f-serif); font-weight: 600; font-size: 22px; color: var(--navy); margin: 0 0 8px; line-height: 1.3; }
+.paper p { color: var(--muted); margin: 0; max-width: 72ch; }
+.paper .venue { font-style: italic; color: var(--ink); margin-top: 8px; font-size: 15px; }
+.status { font-size: 11.5px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; padding: 5px 11px; border-radius: 3px; white-space: nowrap; border: 1px solid #cdd6e6; color: var(--muted); }
+.status.pub { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+/* ---------- Experience ---------- */
+.exp { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; }
+.job { padding: 26px 0; border-top: 1px solid var(--line); min-width: 0; }
+.job .when { font-size: 12.5px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); }
+.job h3 { font-family: var(--f-serif); font-weight: 600; font-size: 21px; color: var(--navy); margin: 6px 0 2px; line-height: 1.3; }
+.job .org { font-size: 14.5px; color: var(--navy-2); font-weight: 500; margin: 0 0 8px; }
+.job p { color: var(--muted); margin: 0; font-size: 15.5px; }
+
+/* ---------- Skills ---------- */
+.skills { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+.skillset { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--navy); border-radius: 4px; padding: 22px; }
+.skillset h3 { font-size: 12.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--navy-2); margin: 0 0 14px; }
+.skillset ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 15.5px; }
+
+/* ---------- Contact band ---------- */
+.contact { background: var(--navy); color: #fff; }
+.contact .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; padding-block: 80px; }
+.contact .kicker { color: #d9b968; }
+.contact h2 { font-family: var(--f-serif); font-weight: 600; font-size: clamp(32px, 4vw, 44px); margin: 14px 0 12px; line-height: 1.15; }
+.contact h2 em { color: #d9b968; font-weight: 500; }
+.contact p { color: #c9d1e2; margin: 0; max-width: 54ch; font-size: 17px; }
+.contact .email { display: block; margin-top: 18px; font-size: 15px; color: #fff; letter-spacing: .3px; }
+.btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+.btn { display: inline-block; padding: 13px 22px; font-size: 13.5px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; border: 1px solid rgba(255,255,255,.4); border-radius: 3px; color: #fff; transition: background .15s, border-color .15s, color .15s; }
+.btn:hover { border-color: #fff; }
+.btn.gold { background: var(--gold); border-color: var(--gold); color: #fff; }
+.btn.gold:hover { background: #a37f2e; }
+
+footer { background: var(--navy-dark); color: #8f99b0; font-size: 13.5px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-block: 26px; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .profile .wrap { grid-template-columns: 1fr; gap: 40px; }
+  .portrait { max-width: 360px; }
+  .feature { grid-template-columns: 1fr; gap: 22px; padding: 20px; }
+  .feature:nth-child(even) .shot { order: 0; }
+  .grid, .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .contact .wrap { grid-template-columns: 1fr; }
+  .btns { justify-content: flex-start; }
 }
-.card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 25px;
-  transition: transform .2s, border-color .2s;
+@media (max-width: 640px) {
+  .nav { position: static; }
+  .topbar .places span:nth-child(n+4) { display: none; }
+  .brand .name { font-size: 25px; }
+  .menu { gap: 16px; }
+  .menu a { font-size: 13px; }
+  .stats { grid-template-columns: 1fr; gap: 22px; padding-left: 22px; }
+  .grid, .skills, .exp { grid-template-columns: 1fr; }
+  .paper { grid-template-columns: 1fr; gap: 8px; }
+  .paper .status { justify-self: start; }
+  .about p { text-align: left; }
 }
-.card:hover { transform: translateY(-3px); border-color: #678bc5; }
-.number { color: var(--accent); font-size: 13px; font-weight: 700; }
-h3 { font-size: 20px; margin: 8px 0; }
-.card p, .muted { color: var(--muted); }
-.tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 15px 0; }
-.tag {
-  font-size: 12px;
-  color: #c8d8f4;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 3px 10px;
-}
-.project-link { display: inline-block; margin-top: 6px; font-weight: 600; }
-.timeline { border-left: 1px solid var(--border); margin-left: 7px; }
-.entry { padding: 0 0 30px 25px; position: relative; }
-.entry:before {
-  content: "";
-  position: absolute;
-  left: -5px;
-  top: 10px;
-  width: 9px;
-  height: 9px;
-  background: var(--accent);
-  border-radius: 50%;
-}
-.entry h3 { margin-top: 0; }
-.date { font-size: 13px; color: var(--accent); }
-.entry p { color: var(--muted); margin-bottom: 0; }
-.skills { display: flex; flex-wrap: wrap; gap: 10px; }
-.skill {
-  padding: 10px 14px;
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  font-size: 14px;
-}
-footer {
-  border-top: 1px solid var(--border);
-  margin-top: 55px;
-  padding-top: 28px;
-  padding-bottom: 35px;
-  color: var(--muted);
-  font-size: 13px;
-}
-@media(max-width: 650px) {
-  .grid { grid-template-columns: 1fr; }
-  .navlinks { gap: 12px; }
-  nav { align-items: flex-start; flex-direction: column; }
-  .hero { padding-top: 60px; }
-  h1 { letter-spacing: -1.5px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
 }
 </style>
 </head>
 
 <body>
-<nav>
-  <a class="logo" href="#">AG.</a>
-  <div class="navlinks">
-    <a href="#projects">Projects</a>
-    <a href="#research">Research</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="cam" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></symbol>
+</svg>
+
+<!-- Utility bar -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="places">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      <span>Santa Barbara, CA</span><span class="dot">•</span>
+      <span>UC Santa Barbara</span><span class="dot">•</span>
+      <span>Jamshedpur, India</span>
+    </div>
+    <a class="mail" href="mailto:aryangautam@ucsb.edu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      aryangautam@ucsb.edu
+    </a>
+  </div>
+</div>
+
+<!-- Main nav -->
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="name">Aryan Gautam</span>
+      <span class="sub">Hardware &nbsp;|&nbsp; Research &nbsp;|&nbsp; AI</span>
+    </a>
+    <div class="menu">
+      <a href="#top" class="active">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 </nav>
 
-<header class="hero">
-  <p class="eyebrow">Computer Engineering · AI · Research</p>
-  <h1>Hi, I'm Aryan.<br>
-    I build <span>intelligent systems.</span>
-  </h1>
-  <p class="intro">
-    I'm a Computer Engineering student at the University of
-    California, Santa Barbara, exploring the intersection of
-    artificial intelligence, embedded systems, computer architecture,
-    and experimental physics.
-  </p>
-  <div class="buttons">
-    <a class="btn primary" href="#projects">Explore my work ↓</a>
-    <a class="btn" href="https://github.com/AryanGautam842"
-       target="_blank" rel="noopener">GitHub ↗</a>
-    <a class="btn" href="https://www.linkedin.com/in/gautam1974/"
-       target="_blank" rel="noopener">LinkedIn ↗</a>
+<!-- Title band -->
+<header class="band" id="top">
+  <div class="wrap">
+    <div class="crumbs"><span>Home</span><span aria-hidden="true">›</span><span>Portfolio</span><span aria-hidden="true">›</span><span class="here">Aryan Gautam</span></div>
+    <h1>Hi, this is Gautam. Welcome to <em>Gautam City.</em></h1>
+    <p class="role">Computer Engineering · UC Santa Barbara</p>
   </div>
 </header>
 
 <main>
-<section id="projects">
-  <p class="section-label">01 / SELECTED WORK</p>
-  <h2>Projects</h2>
-  <div class="grid">
 
-    <article class="card">
-      <span class="number">PROJECT 01</span>
-      <h3>Rocket Avionics & Telemetry</h3>
-      <p>
-        Developing FPGA-based avionics systems for rocket telemetry
-        and flight data acquisition. Integrating microcontrollers
-        and onboard sensors for real-time monitoring.
-      </p>
-      <div class="tags">
-        <span class="tag">FPGA</span>
-        <span class="tag">STM32</span>
-        <span class="tag">ESP32</span>
-        <span class="tag">Embedded Systems</span>
+<!-- Profile -->
+<section class="profile">
+  <div class="wrap">
+    <figure class="portrait">
+      <img src="images/profile.jpg" alt="Portrait of Aryan Gautam"
+           onerror="this.parentElement.classList.add('empty');this.remove()">
+      <div class="ph"><svg><use href="#cam"/></svg>Add your headshot at<code>images/profile.jpg</code></div>
+    </figure>
+
+    <div class="info">
+      <p class="kicker">Engineer · Researcher</p>
+      <h2>Aryan Gautam</h2>
+      <p class="lede">Computer Engineering student building flight electronics, particle-detector instrumentation, and AI systems that remember.</p>
+
+      <div class="stats">
+        <div class="stat"><div class="num">3</div><div class="cap">Research papers written</div></div>
+        <div class="stat"><div class="num">3,000</div><div class="cap">Prompts in my AI memory study</div></div>
+        <div class="stat"><div class="num">9</div><div class="cap">Engineering projects</div></div>
+        <div class="stat"><div class="num">2</div><div class="cap">Research labs & teams at UCSB</div></div>
       </div>
-      <span class="muted">Gaucho Rocket Project · UCSB</span>
-    </article>
 
-    <article class="card">
-      <span class="number">PROJECT 02</span>
-      <h3>MilliQan Detector Research</h3>
-      <p>
-        Investigating how temperature affects detector readings
-        for muon particles, with the goal of improving signal
-        stability, calibration, and data quality.
-      </p>
-      <div class="tags">
-        <span class="tag">Instrumentation</span>
-        <span class="tag">Electronics</span>
-        <span class="tag">Data Analysis</span>
+      <div class="about">
+        <h3>About</h3>
+        <p>
+          I'm happiest when a project forces me to understand something all
+          the way down. At UCSB I work with the High Energy Physics group on
+          the MilliQan experiment, studying how temperature shifts the signals
+          a detector records from cosmic-ray muons. On the Gaucho Rocket
+          Project I design the avionics that read combustion-chamber
+          temperatures during hot-fire tests.
+        </p>
+        <p>
+          Outside the lab I write research on how memory changes chatbot
+          performance, build an 8-bit CPU with my team, and mentor students
+          through ACM's research branch. Gautam City is where all of it lives.
+        </p>
       </div>
-      <span class="muted">High Energy Physics · UCSB</span>
-    </article>
-
-    <article class="card">
-      <span class="number">PROJECT 03</span>
-      <h3>AI & Chatbot Memory</h3>
-      <p>
-        Compared chatbot architectures with and without memory
-        across thousands of prompts to evaluate response quality
-        and computational efficiency.
-      </p>
-      <div class="tags">
-        <span class="tag">Python</span>
-        <span class="tag">pandas</span>
-        <span class="tag">scikit-learn</span>
-        <span class="tag">LLMs</span>
-      </div>
-      <a class="project-link" href="#research">Related research ↓</a>
-    </article>
-
-    <article class="card">
-      <span class="number">PROJECT 04</span>
-      <h3>BlackBerry-Inspired Push AI</h3>
-      <p>
-        Explored a hardware-inspired architecture for efficient
-        on-device LLM inference and cached memory strategies
-        to reduce redundant computation.
-      </p>
-      <div class="tags">
-        <span class="tag">AI Systems</span>
-        <span class="tag">LLMs</span>
-        <span class="tag">Efficiency</span>
-      </div>
-      <a class="project-link"
-         href="https://github.com/AryanGautam842"
-         target="_blank" rel="noopener">Explore GitHub ↗</a>
-    </article>
-
-    <article class="card">
-      <span class="number">PROJECT 05</span>
-      <h3>MoveMate</h3>
-      <p>
-        Developed a web application using React and Vite,
-        with a public demo deployment and a focus on
-        accessible, practical user experiences.
-      </p>
-      <div class="tags">
-        <span class="tag">React</span>
-        <span class="tag">Vite</span>
-        <span class="tag">JavaScript</span>
-      </div>
-      <a class="project-link"
-         href="https://github.com/AryanGautam842"
-         target="_blank" rel="noopener">Explore GitHub ↗</a>
-    </article>
-
-    <article class="card">
-      <span class="number">PROJECT 06</span>
-      <h3>Remote-Controlled Boat</h3>
-      <p>
-        Designed a boat using CAD and integrated mechanical
-        and electronic components. Programmed microcontrollers
-        for wireless communication and real-time data exchange.
-      </p>
-      <div class="tags">
-        <span class="tag">Arduino</span>
-        <span class="tag">STM32</span>
-        <span class="tag">CAD</span>
-        <span class="tag">Electronics</span>
-      </div>
-      <span class="muted">ECE Project · UCSB</span>
-    </article>
-
-    <article class="card">
-      <span class="number">PROJECT 07</span>
-      <h3>Machine Learning & Recommendations</h3>
-      <p>
-        Built product recommendation approaches, customer
-        segmentation models, and lead-conversion predictions
-        as part of a data-driven decision-making program.
-      </p>
-      <div class="tags">
-        <span class="tag">Machine Learning</span>
-        <span class="tag">Python</span>
-        <span class="tag">Data Science</span>
-      </div>
-      <span class="muted">MIT Schwarzman College of Computing program</span>
-    </article>
-
-    <article class="card">
-      <span class="number">PROJECT 08</span>
-      <h3>Understanding Asymptotic Limits</h3>
-      <p>
-        Investigated conceptual gaps in how students learn
-        limits and developed a structured pedagogical approach
-        to build deeper mathematical understanding.
-      </p>
-      <div class="tags">
-        <span class="tag">Mathematics</span>
-        <span class="tag">Education Research</span>
-      </div>
-      <a class="project-link" href="#research">Read publication ↓</a>
-    </article>
-
+    </div>
   </div>
 </section>
 
-<section id="research">
-  <p class="section-label">02 / RESEARCH & PUBLICATIONS</p>
-  <h2>Research</h2>
-  <div class="timeline">
+<!-- Projects -->
+<section class="block tint" id="projects">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Selected Work</p>
+      <h2>Projects</h2>
+      <p>Three hardware builds I've spent the most late nights on, followed by software, AI, and research work.</p>
+      <div class="rule"></div>
+    </div>
 
-    <article class="entry">
-      <span class="date">DECEMBER 2025</span>
-      <h3>Comparative Analysis of Chatbot Architectures With and Without Memory</h3>
-      <p>
-        Evaluated chatbot response quality across 3,000 prompts,
-        using Python-based analysis to investigate the effect
-        of memory on response performance.
-      </p>
-      <p class="muted">Publication status: verify current journal status before updating.</p>
-    </article>
+    <div class="featured">
 
-    <article class="entry">
-      <span class="date">SEPTEMBER 2025</span>
-      <h3>From Push Email to Push AI</h3>
-      <p>
-        Explored BlackBerry-inspired efficiency in large language
-        models, including cached memory and reducing redundant
-        computation in repeated prompts.
-      </p>
-      <p class="muted">Listed as under review in the supplied CV.</p>
-    </article>
+      <article class="feature">
+        <figure class="shot">
+          <img src="images/muon-detector.jpg" alt="Muon detector setup in the UCSB High Energy Physics lab"
+               onerror="this.parentElement.classList.add('empty');this.remove()">
+          <div class="ph"><svg><use href="#cam"/></svg>Add a photo at<code>images/muon-detector.jpg</code></div>
+        </figure>
+        <div class="body">
+          <p class="kicker">High Energy Physics · UCSB</p>
+          <h3>Muon Detector & MilliQan Research</h3>
+          <p>Studying how temperature shifts detector readings for cosmic-ray muons in the MilliQan experiment.</p>
+          <ul class="points">
+            <li>Characterizing temperature-dependent signal drift</li>
+            <li>Improving calibration and signal stability</li>
+            <li>Analyzing detector data to raise data quality</li>
+          </ul>
+          <div class="tags"><span class="tag">Instrumentation</span><span class="tag">Detectors</span><span class="tag">Data Analysis</span></div>
+        </div>
+      </article>
 
-    <article class="entry">
-      <span class="date">JUNE 2025</span>
-      <h3>Why Asymptotic Behavior of Limits Is Important for Students to Learn Before Differentiation</h3>
-      <p>
-        Proposed a structured approach to teaching limits and
-        strengthening conceptual understanding of asymptotic
-        behavior.
-      </p>
-      <p class="muted">International Journal of Research in Engineering & Science, as listed in CV.</p>
-    </article>
+      <article class="feature">
+        <figure class="shot">
+          <img src="images/cpu.jpg" alt="Breadboard 8-bit CPU build"
+               onerror="this.parentElement.classList.add('empty');this.remove()">
+          <div class="ph"><svg><use href="#cam"/></svg>Add a photo at<code>images/cpu.jpg</code></div>
+        </figure>
+        <div class="body">
+          <p class="kicker">Computer Architecture · Team Build</p>
+          <h3>8-Bit CPU from Scratch</h3>
+          <p>A team-built 8-bit computer based on Ben Eater's bus architecture, wired module by module and carried over to an FPGA.</p>
+          <ul class="points">
+            <li>Shared 8-bit bus with registers, ALU, RAM and program counter</li>
+            <li>Control logic and microcode for the instruction set</li>
+            <li>Debugged with a logic analyzer and bench supply</li>
+          </ul>
+          <div class="tags"><span class="tag">Digital Logic</span><span class="tag">FPGA</span><span class="tag">Architecture</span></div>
+        </div>
+      </article>
 
+      <article class="feature">
+        <figure class="shot">
+          <img src="images/rocket-avionics.jpg" alt="Gaucho Rocket Project avionics board"
+               onerror="this.parentElement.classList.add('empty');this.remove()">
+          <div class="ph"><svg><use href="#cam"/></svg>Add a photo at<code>images/rocket-avionics.jpg</code></div>
+        </figure>
+        <div class="body">
+          <p class="kicker">Gaucho Rocket Project · Avionics</p>
+          <h3>Rocket Avionics & Telemetry</h3>
+          <p>Flight electronics for telemetry and data acquisition, including a board that records combustion-chamber temperature during hot-fire tests.</p>
+          <ul class="points">
+            <li>Thermocouple DAQ PCB in KiCad (STM32 + MAX31856)</li>
+            <li>Logs chamber temperatures to microSD so data survives the test</li>
+            <li>Onboarding task for new avionics members</li>
+          </ul>
+          <div class="tags"><span class="tag">STM32</span><span class="tag">KiCad</span><span class="tag">FPGA</span><span class="tag">Sensors</span></div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="more">More Projects</p>
+    <div class="grid">
+
+      <article class="card">
+        <figure class="shot">
+          <img src="images/chatbot-memory.jpg" alt="Chart from the chatbot memory study" onerror="this.parentElement.classList.add('empty');this.remove()">
+          <div class="ph"><svg><use href="#cam"/></svg><code>images/chatbot-memory.jpg</code></div>
+        </figure>
+        <h3>AI & Chatbot Memory</h3>
+        <p>Compared chatbot architectures with and without long-term memory across 3,000 prompts.</p>
+        <div class="foot"><span>Published on arXiv</span><a href="#research">Paper ›</a></div>
+      </article>
+
+      <article class="card">
+        <figure class="shot">
+          <img src="images/push-ai.jpg" alt="Push AI architecture diagram" onerror="this.parentElement.classList.add('empty');this.remove()">
+          <div class="ph"><svg><use href="#cam"/></svg><code>images/push-ai.jpg</code></div>
+        </figure>
+        <h3>BlackBerry-Inspired Push AI</h3>
+        <p>A push-email-inspired design for on-device LLM inference, using cached memory to skip redundant computation.</p>
+        <div class="foot"><span>Paper under review</span><a href="https://github.com/AryanGautam842" target="_blank" rel="noopener">GitHub ›</a></div>
+      </article>
+
+      <article class="card">
+        <figure class="shot">
+          <img src="images/movemate.jpg" alt="MoveMate app screenshot" onerror="this.parentElement.classList.add('empty');this.remove()">
+          <div class="ph"><svg><use href="#cam"/></svg><code>images/movemate.jpg</code></div>
+        </figure>
+        <h3>MoveMate</h3>
+        <p>A peer-to-peer storage marketplace web app built with React and Vite, with a public demo.</p>
+        <div class="foot"><span>Web app</span><a href="https://github.com/AryanGautam842" target="_blank" rel="noopener">GitHub ›</a></div>
+      </article>
+
+      <article class="card">
+        <figure class="shot">
+          <img src="images/rc-boat.jpg" alt="Remote-controlled boat" onerror="this.parentElement.classList.add('empty');this.remove()">
+          <div class="ph"><svg><use href="#cam"/></svg><code>images/rc-boat.jpg</code></div>
+        </figure>
+        <h3>Remote-Controlled Boat</h3>
+        <p>Hull designed in CAD, electronics integrated, and microcontrollers programmed for wireless real-time control.</p>
+        <div class="foot"><span>ECE Project · UCSB</span></div>
+      </article>
+
+      <article class="card">
+        <figure class="shot">
+          <img src="images/ml-recommendations.jpg" alt="Machine learning model output" onerror="this.parentElement.classList.add('empty');this.remove()">
+          <div class="ph"><svg><use href="#cam"/></svg><code>images/ml-recommendations.jpg</code></div>
+        </figure>
+        <h3>ML & Recommendations</h3>
+        <p>Product recommenders, customer segmentation models, and lead-conversion predictions.</p>
+        <div class="foot"><span>MIT Schwarzman College of Computing program</span></div>
+      </article>
+
+      <article class="card">
+        <figure class="shot">
+          <img src="images/limits.jpg" alt="Asymptotic limits illustration" onerror="this.parentElement.classList.add('empty');this.remove()">
+          <div class="ph"><svg><use href="#cam"/></svg><code>images/limits.jpg</code></div>
+        </figure>
+        <h3>Teaching Asymptotic Limits</h3>
+        <p>Where students' understanding of limits breaks down, and a structured way to teach it before derivatives.</p>
+        <div class="foot"><span>Published · IJRES</span><a href="#research">Paper ›</a></div>
+      </article>
+
+    </div>
   </div>
 </section>
 
-<section id="experience">
-  <p class="section-label">03 / EXPERIENCE</p>
-  <h2>What I've been working on</h2>
-  <div class="timeline">
+<!-- Research -->
+<section class="block" id="research">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Research & Publications</p>
+      <h2>Publications</h2>
+      <div class="rule"></div>
+    </div>
 
-    <article class="entry">
-      <span class="date">AUGUST 2026 — PRESENT</span>
-      <h3>Gaucho Rocket Project · UCSB</h3>
-      <p>
-        FPGA-based avionics, flight telemetry, embedded hardware,
-        sensor integration, and data acquisition.
-      </p>
-    </article>
-
-    <article class="entry">
-      <span class="date">JULY 2026 — SEPTEMBER 2026</span>
-      <h3>Manufacturing Intern · Bhola Maharaj</h3>
-      <p>
-        Standardized sweet manufacturing recipes and production
-        processes, explored automation, and worked on production
-        consistency and process optimization.
-      </p>
-    </article>
-
-    <article class="entry">
-      <span class="date">DECEMBER 2025 — PRESENT</span>
-      <h3>AI Automation & Systems Intern</h3>
-      <p>
-        Worked on AI voice automation workflows, backend scripts,
-        testing, troubleshooting, and customized solutions.
-      </p>
-    </article>
-
-    <article class="entry">
-      <span class="date">OCTOBER 2025 — PRESENT</span>
-      <h3>Research Assistant · UCSB Physics</h3>
-      <p>
-        Working with the High Energy Physics group on MilliQan
-        detector research and temperature-related signal analysis.
-      </p>
-    </article>
-
-    <article class="entry">
-      <span class="date">JULY 2025 — PRESENT</span>
-      <h3>Research Branch Officer · ACM at UCSB</h3>
-      <p>
-        Mentoring students, coordinating research symposiums,
-        and connecting students with faculty research.
-      </p>
-    </article>
-
-    <article class="entry">
-      <span class="date">SEPTEMBER 2025 — PRESENT</span>
-      <h3>Resident Assistant · UCSB</h3>
-      <p>
-        Supporting residents, facilitating community programs,
-        resolving conflicts, and strengthening student engagement.
-      </p>
-    </article>
-
+    <div class="papers">
+      <article class="paper">
+        <span class="date">Dec 2025</span>
+        <div class="body">
+          <h3>Does Long-Term Memory Improve Chatbot Performance?</h3>
+          <p>A comparative study of chatbot architectures with and without memory, evaluating response quality across 3,000 prompts.</p>
+          <p class="venue">arXiv (cs.AI) · Zenodo</p>
+        </div>
+        <span class="status pub">Published</span>
+      </article>
+      <article class="paper">
+        <span class="date">Sep 2025</span>
+        <div class="body">
+          <h3>From Push Email to Push AI</h3>
+          <p>Applies BlackBerry-style push efficiency to large language models through cached memory and less recomputation on repeated prompts.</p>
+        </div>
+        <span class="status">Under review</span>
+      </article>
+      <article class="paper">
+        <span class="date">Jun 2025</span>
+        <div class="body">
+          <h3>Why Asymptotic Behavior of Limits Is Important for Students to Learn Before Differentiation</h3>
+          <p>Proposes a structured approach to teaching limits that builds conceptual understanding of asymptotic behavior.</p>
+          <p class="venue">International Journal of Research in Engineering & Science</p>
+        </div>
+        <span class="status pub">Published</span>
+      </article>
+    </div>
   </div>
 </section>
 
-<section id="skills">
-  <p class="section-label">04 / TOOLKIT</p>
-  <h2>Technical skills</h2>
-  <div class="skills">
-    <span class="skill">Python</span>
-    <span class="skill">C++</span>
-    <span class="skill">SQL</span>
-    <span class="skill">R</span>
-    <span class="skill">React</span>
-    <span class="skill">Flask</span>
-    <span class="skill">PyTorch</span>
-    <span class="skill">TensorFlow</span>
-    <span class="skill">pandas</span>
-    <span class="skill">scikit-learn</span>
-    <span class="skill">Git & GitHub</span>
-    <span class="skill">Linux / Unix</span>
-    <span class="skill">Docker</span>
-    <span class="skill">Arduino</span>
-    <span class="skill">STM32</span>
-    <span class="skill">ESP32</span>
-    <span class="skill">Embedded Systems</span>
-    <span class="skill">Computer Architecture</span>
-    <span class="skill">Machine Learning</span>
-    <span class="skill">Data Analysis</span>
+<!-- Experience -->
+<section class="block tint" id="experience">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Experience</p>
+      <h2>Roles & Positions</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="exp">
+      <div class="job"><span class="when">Aug 2026 — Present</span><h3>Avionics Team Member</h3><p class="org">Gaucho Rocket Project · UCSB</p><p>FPGA and STM32 avionics, flight telemetry, sensor integration and data acquisition hardware.</p></div>
+      <div class="job"><span class="when">Oct 2025 — Present</span><h3>Research Assistant</h3><p class="org">High Energy Physics · UCSB Physics</p><p>MilliQan detector research focused on temperature-related signal analysis.</p></div>
+      <div class="job"><span class="when">Dec 2025 — Present</span><h3>AI Automation & Systems Intern</h3><p class="org">Industry internship</p><p>AI voice automation workflows, backend scripts, testing, troubleshooting and custom solutions.</p></div>
+      <div class="job"><span class="when">Jul 2026 — Sep 2026</span><h3>Manufacturing Intern</h3><p class="org">Bhola Maharaj</p><p>Standardized recipes and production processes, explored automation, and improved production consistency.</p></div>
+      <div class="job"><span class="when">Jul 2025 — Present</span><h3>Research Branch Officer</h3><p class="org">ACM at UCSB</p><p>Mentor students, coordinate research symposiums, and connect students with faculty research.</p></div>
+      <div class="job"><span class="when">Sep 2025 — Present</span><h3>Resident Assistant</h3><p class="org">UC Santa Barbara</p><p>Support residents, run community programs, resolve conflicts and build student engagement.</p></div>
+    </div>
   </div>
 </section>
 
-<section id="contact">
-  <p class="section-label">05 / GET IN TOUCH</p>
-  <h2>Let's connect.</h2>
-  <p class="intro">
-    Interested in AI systems, computer engineering, embedded
-    hardware, or research collaborations? I'd love to connect.
-  </p>
-  <div class="buttons">
-    <a class="btn primary" href="mailto:aryangautam@ucsb.edu">Email me ↗</a>
-    <a class="btn" href="https://www.linkedin.com/in/gautam1974/"
-       target="_blank" rel="noopener">LinkedIn ↗</a>
-    <a class="btn" href="https://github.com/AryanGautam842"
-       target="_blank" rel="noopener">GitHub ↗</a>
+<!-- Skills -->
+<section class="block" id="skills">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Toolkit</p>
+      <h2>Technical Skills</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="skills">
+      <div class="skillset"><h3>Hardware</h3><ul><li>STM32 · ESP32 · Arduino</li><li>FPGA</li><li>KiCad PCB design</li><li>Embedded systems</li><li>Computer architecture</li></ul></div>
+      <div class="skillset"><h3>Languages</h3><ul><li>Python</li><li>C++</li><li>SQL</li><li>R</li><li>JavaScript</li></ul></div>
+      <div class="skillset"><h3>AI & Data</h3><ul><li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>pandas</li><li>Data analysis</li></ul></div>
+      <div class="skillset"><h3>Software & Tools</h3><ul><li>React · Flask</li><li>Git & GitHub</li><li>Linux / Unix</li><li>Docker</li><li>CAD</li></ul></div>
+    </div>
   </div>
 </section>
+
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Get in Touch</p>
+      <h2>Thanks for visiting <em>Gautam City.</em></h2>
+      <p>The door's always open. If you want to build something, research something, or just talk rockets, detectors, or AI, I'd love to hear from you.</p>
+      <span class="email">aryangautam@ucsb.edu</span>
+    </div>
+    <div class="btns">
+      <a class="btn gold" href="mailto:aryangautam@ucsb.edu">Email Me</a>
+      <a class="btn" href="https://www.linkedin.com/in/gautam1974/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/AryanGautam842" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
 </main>
 
 <footer>
-  <p> Aryan Gautam · Computer Engineering · UC Santa Barbara</p>
-  <p>Designed and built with HTML and CSS.</p>
+  <div class="wrap">
+    <span>© 2026 Aryan Gautam · Gautam City</span>
+    <span>Computer Engineering · UC Santa Barbara</span>
+  </div>
 </footer>
+
 </body>
 </html>
