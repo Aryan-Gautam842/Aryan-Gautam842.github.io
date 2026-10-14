@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- 
+
 <style>
 /* Layout: professional-profile style — navy utility bar, white nav, navy title band,
    photo + profile column with stat block, then alternating white / pale-blue sections. */
@@ -24,14 +24,14 @@
   --line: #e1e6ef;
   --paper: #ffffff;
   --tint: #f3f7fd;
- 
+
   --f-serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --f-sans: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
- 
+
   --wrap: 1180px;
   --gutter: clamp(18px, 4vw, 32px);
 }
- 
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -47,7 +47,7 @@ img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 a:focus-visible, .btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: var(--gutter); }
- 
+
 /* ---------- Top utility bar ---------- */
 .topbar { background: var(--navy-dark); color: #aab3c6; font-size: 13px; letter-spacing: 1.2px; }
 .topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 42px; flex-wrap: wrap; }
@@ -57,7 +57,7 @@ a:focus-visible, .btn:focus-visible { outline: 2px solid var(--gold); outline-of
 .topbar .mail { letter-spacing: .3px; display: inline-flex; align-items: center; gap: 7px; }
 .topbar .mail svg { width: 14px; height: 14px; stroke: #aab3c6; fill: none; stroke-width: 1.6; }
 .topbar .mail:hover { color: #fff; }
- 
+
 /* ---------- Main nav ---------- */
 .nav { background: var(--paper); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20; }
 .nav .wrap { display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 92px; flex-wrap: wrap; padding-block: 12px; }
@@ -68,7 +68,7 @@ a:focus-visible, .btn:focus-visible { outline: 2px solid var(--gold); outline-of
 .menu { display: flex; gap: clamp(18px, 3vw, 38px); flex-wrap: wrap; }
 .menu a { font-size: 14.5px; font-weight: 500; letter-spacing: .6px; text-transform: uppercase; color: var(--ink); padding: 6px 0; border-bottom: 2px solid transparent; }
 .menu a:hover, .menu a.active { color: var(--navy); border-bottom-color: var(--navy); }
- 
+
 /* ---------- Title band ---------- */
 .band {
   background: linear-gradient(180deg, var(--navy) 0%, #182a52 100%);
@@ -86,7 +86,7 @@ a:focus-visible, .btn:focus-visible { outline: 2px solid var(--gold); outline-of
 .band h1 { font-family: var(--f-serif); font-weight: 600; font-size: clamp(40px, 6vw, 66px); line-height: 1.1; margin: 26px 0 16px; letter-spacing: -.5px; text-wrap: balance; }
 .band h1 em { font-style: italic; color: #d9b968; font-weight: 500; }
 .band .role { font-size: 18px; color: #c9d1e2; margin: 0; }
- 
+
 /* ---------- Profile ---------- */
 .profile .wrap { display: grid; grid-template-columns: 370px 1fr; gap: 56px; padding-block: 92px 88px; align-items: start; }
 .portrait { margin: 0; aspect-ratio: 370 / 494; border-radius: 8px; overflow: hidden; position: relative; background: var(--tint); max-width: 100%; }
@@ -95,7 +95,7 @@ a:focus-visible, .btn:focus-visible { outline: 2px solid var(--gold); outline-of
 .kicker { font-size: 12.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--navy-2); margin: 0; }
 .profile h2 { font-family: var(--f-serif); font-weight: 600; font-size: clamp(34px, 4vw, 46px); color: var(--navy); margin: 14px 0 6px; line-height: 1.15; letter-spacing: -.3px; }
 .lede { font-size: 19px; color: var(--muted); margin: 0; max-width: 62ch; }
- 
+
 .stats {
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 40px;
   border-left: 3px solid var(--gold); padding: 10px 0 10px 30px; margin: 40px 0 46px;
@@ -103,10 +103,10 @@ a:focus-visible, .btn:focus-visible { outline: 2px solid var(--gold); outline-of
 .stat .num { font-family: var(--f-serif); font-weight: 600; font-size: 32px; color: var(--navy); line-height: 1.1; font-variant-numeric: oldstyle-nums; }
 .stat .num sup { font-weight: 400; font-size: .7em; vertical-align: .35em; }
 .stat .cap { font-size: 13.5px; font-weight: 500; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
- 
+
 .about h3 { font-family: var(--f-sans); font-size: 19px; font-weight: 600; margin: 0 0 14px; color: var(--ink); }
 .about p { margin: 0 0 16px; font-size: 17px; color: #333b4f; text-align: justify; hyphens: auto; }
- 
+
 /* ---------- Generic section ---------- */
 section.block { padding-block: clamp(72px, 9vw, 104px); }
 section.tint { background: var(--tint); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -114,7 +114,7 @@ section.tint { background: var(--tint); border-top: 1px solid var(--line); borde
 .head h2 { font-family: var(--f-serif); font-weight: 600; font-size: clamp(32px, 4vw, 42px); color: var(--navy); margin: 12px 0 10px; line-height: 1.15; }
 .head p { color: var(--muted); font-size: 17px; margin: 0; }
 .rule { width: 56px; height: 3px; background: var(--gold); margin-top: 18px; }
- 
+
 /* ---------- Photo slots ---------- */
 .shot { margin: 0; position: relative; overflow: hidden; background: #e9eef7; aspect-ratio: 4 / 3; max-width: 100%; border-radius: 6px; }
 .shot img { width: 100%; height: 100%; object-fit: cover; }
@@ -127,14 +127,34 @@ section.tint { background: var(--tint); border-top: 1px solid var(--line); borde
 .ph svg { width: 34px; height: 34px; stroke: var(--navy-2); fill: none; stroke-width: 1.4; }
 .ph code { font-size: 12px; color: var(--navy); background: #fff; padding: 2px 7px; border-radius: 4px; border: 1px solid var(--line); }
 .empty .ph { display: flex; }
- 
+
+/* ---------- Project gallery (main image + thumbnails) ---------- */
+.gallery { display: grid; gap: 10px; min-width: 0; }
+.gallery .shot { border: 1px solid var(--line); }
+.gallery .shot > a { display: block; width: 100%; height: 100%; }
+.gallery .main { aspect-ratio: 16 / 11; background: #f5f4ef; }
+.gallery .main img { object-fit: contain; padding: 6px; }
+.gallery .thumbs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.gallery .thumbs .shot { aspect-ratio: 4 / 3; }
+.gallery .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 10px 6px; font-size: 11.5px; line-height: 1.35; color: #fff; background: linear-gradient(transparent, rgba(14,24,48,.82)); }
+.gallery .main .cap { color: var(--navy); background: rgba(255,255,255,.88); padding: 6px 10px; border-top: 1px solid var(--line); }
+.gallery .zoom { position: absolute; top: 8px; right: 8px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--navy); background: #fff; border: 1px solid var(--line); border-radius: 3px; padding: 3px 8px; }
+.gallery .shot.empty .cap, .gallery .shot.empty .zoom { display: none; }
+/* Three-across thumbnails for galleries with more photos */
+.gallery .thumbs.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.gallery .thumbs.three .shot { aspect-ratio: 1 / 1; }
+.gallery .thumbs.three .wide { grid-column: span 2; aspect-ratio: auto; }
+.gallery .main.photo { background: #e9eef7; }
+.gallery .main.photo img { object-fit: cover; padding: 0; }
+.gallery .main.photo .cap { color: #fff; background: linear-gradient(transparent, rgba(14,24,48,.82)); border-top: 0; padding: 18px 10px 6px; }
+
 /* ---------- Featured projects ---------- */
 .featured { display: grid; gap: 28px; }
 .feature {
   display: grid; grid-template-columns: 1fr 1.1fr; gap: 44px; align-items: center;
   background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 28px;
 }
-.feature:nth-child(even) .shot { order: 2; }
+.feature:nth-child(even) > .shot { order: 2; }
 .feature .body { min-width: 0; }
 .feature h3 { font-family: var(--f-serif); font-weight: 600; font-size: clamp(25px, 2.6vw, 30px); color: var(--navy); margin: 10px 0 12px; line-height: 1.2; }
 .feature p { color: var(--muted); margin: 0 0 16px; }
@@ -142,7 +162,9 @@ section.tint { background: var(--tint); border-top: 1px solid var(--line); borde
 .points li { font-size: 15.5px; color: #333b4f; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag { font-size: 11.5px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--navy-2); border: 1px solid #cdd6e6; border-radius: 3px; padding: 4px 9px; }
- 
+.feature .link { display: inline-block; margin-top: 18px; font-size: 13.5px; font-weight: 600; color: var(--navy); }
+.feature .link:hover { color: var(--gold); }
+
 .more { font-size: 12.5px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--navy-2); margin: 72px 0 22px; }
 .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
 .card { display: flex; flex-direction: column; gap: 12px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 16px 16px 22px; transition: box-shadow .2s, transform .2s; }
@@ -153,7 +175,7 @@ section.tint { background: var(--tint); border-top: 1px solid var(--line); borde
 .card .foot { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 13px; color: var(--faint); border-top: 1px solid var(--line); padding-top: 12px; }
 .card .foot a { color: var(--navy); font-weight: 600; }
 .card .foot a:hover { color: var(--gold); }
- 
+
 /* ---------- Research ---------- */
 .paper { display: grid; grid-template-columns: 130px 1fr auto; gap: 28px; padding: 28px 0; border-bottom: 1px solid var(--line); align-items: start; }
 .paper:first-child { border-top: 1px solid var(--line); }
@@ -164,7 +186,7 @@ section.tint { background: var(--tint); border-top: 1px solid var(--line); borde
 .paper .venue { font-style: italic; color: var(--ink); margin-top: 8px; font-size: 15px; }
 .status { font-size: 11.5px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; padding: 5px 11px; border-radius: 3px; white-space: nowrap; border: 1px solid #cdd6e6; color: var(--muted); }
 .status.pub { background: var(--navy); border-color: var(--navy); color: #fff; }
- 
+
 /* ---------- Experience ---------- */
 .exp { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; }
 .job { padding: 26px 0; border-top: 1px solid var(--line); min-width: 0; }
@@ -172,13 +194,13 @@ section.tint { background: var(--tint); border-top: 1px solid var(--line); borde
 .job h3 { font-family: var(--f-serif); font-weight: 600; font-size: 21px; color: var(--navy); margin: 6px 0 2px; line-height: 1.3; }
 .job .org { font-size: 14.5px; color: var(--navy-2); font-weight: 500; margin: 0 0 8px; }
 .job p { color: var(--muted); margin: 0; font-size: 15.5px; }
- 
+
 /* ---------- Skills ---------- */
 .skills { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
 .skillset { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--navy); border-radius: 4px; padding: 22px; }
 .skillset h3 { font-size: 12.5px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--navy-2); margin: 0 0 14px; }
 .skillset ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; font-size: 15.5px; }
- 
+
 /* ---------- Contact band ---------- */
 .contact { background: var(--navy); color: #fff; }
 .contact .wrap { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; padding-block: 80px; }
@@ -192,16 +214,16 @@ section.tint { background: var(--tint); border-top: 1px solid var(--line); borde
 .btn:hover { border-color: #fff; }
 .btn.gold { background: var(--gold); border-color: var(--gold); color: #fff; }
 .btn.gold:hover { background: #a37f2e; }
- 
+
 footer { background: var(--navy-dark); color: #8f99b0; font-size: 13.5px; }
 footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-block: 26px; }
- 
+
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
   .profile .wrap { grid-template-columns: 1fr; gap: 40px; }
   .portrait { max-width: 360px; }
   .feature { grid-template-columns: 1fr; gap: 22px; padding: 20px; }
-  .feature:nth-child(even) .shot { order: 0; }
+  .feature:nth-child(even) > .shot { order: 0; }
   .grid, .skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .contact .wrap { grid-template-columns: 1fr; }
   .btns { justify-content: flex-start; }
@@ -217,6 +239,8 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
   .paper { grid-template-columns: 1fr; gap: 8px; }
   .paper .status { justify-self: start; }
   .about p { text-align: left; }
+  .gallery .zoom { display: none; }
+  .gallery .thumbs.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -224,13 +248,13 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
 }
 </style>
 </head>
- 
+
 <body>
- 
+
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="cam" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></symbol>
 </svg>
- 
+
 <!-- Utility bar -->
 <div class="topbar">
   <div class="wrap">
@@ -246,7 +270,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </a>
   </div>
 </div>
- 
+
 <!-- Main nav -->
 <nav class="nav">
   <div class="wrap">
@@ -264,7 +288,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
   </div>
 </nav>
- 
+
 <!-- Title band -->
 <header class="band" id="top">
   <div class="wrap">
@@ -273,9 +297,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     <p class="role">Computer Engineering · UC Santa Barbara</p>
   </div>
 </header>
- 
+
 <main>
- 
+
 <!-- Profile -->
 <section class="profile">
   <div class="wrap">
@@ -284,19 +308,19 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
            onerror="this.parentElement.classList.add('empty');this.remove()">
       <div class="ph"><svg><use href="#cam"/></svg>Add your headshot at<code>images/profile.jpg</code></div>
     </figure>
- 
+
     <div class="info">
       <p class="kicker">Engineer · Researcher</p>
       <h2>Aryan Gautam</h2>
       <p class="lede">Computer Engineering student building flight electronics, particle-detector instrumentation, and AI systems that remember.</p>
- 
+
       <div class="stats">
         <div class="stat"><div class="num">3</div><div class="cap">Research papers written</div></div>
         <div class="stat"><div class="num">3,000</div><div class="cap">Prompts in my AI memory study</div></div>
         <div class="stat"><div class="num">9</div><div class="cap">Engineering projects</div></div>
         <div class="stat"><div class="num">2</div><div class="cap">Research labs & teams at UCSB</div></div>
       </div>
- 
+
       <div class="about">
         <h3>About</h3>
         <p>
@@ -316,7 +340,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
   </div>
 </section>
- 
+
 <!-- Projects -->
 <section class="block tint" id="projects">
   <div class="wrap">
@@ -326,9 +350,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <p>Three hardware builds I've spent the most late nights on, followed by software, AI, and research work.</p>
       <div class="rule"></div>
     </div>
- 
+
     <div class="featured">
- 
+
       <article class="feature">
         <figure class="shot">
           <img src="images/muon-detector.jpg" alt="Muon detector setup in the UCSB High Energy Physics lab"
@@ -347,50 +371,125 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
           <div class="tags"><span class="tag">Instrumentation</span><span class="tag">Detectors</span><span class="tag">Data Analysis</span></div>
         </div>
       </article>
- 
+
+      <!-- 8-bit CPU: module-by-module breadboard photos -->
       <article class="feature">
-        <figure class="shot">
-          <img src="images/cpu.jpg" alt="Breadboard 8-bit CPU build"
-               onerror="this.parentElement.classList.add('empty');this.remove()">
-          <div class="ph"><svg><use href="#cam"/></svg>Add a photo at<code>images/cpu.jpg</code></div>
-        </figure>
+        <div class="gallery">
+          <figure class="shot main photo">
+            <a href="images/cpu-ram.jpg" target="_blank" rel="noopener" aria-label="Open the full-size photo of the RAM module">
+              <img src="images/cpu-ram.jpg" alt="Breadboarded RAM and memory address register with DIP switches for programming and LEDs showing contents"
+                   onerror="this.closest('.shot').classList.add('empty');this.remove()">
+            </a>
+            <span class="zoom">View full size</span>
+            <figcaption class="cap">RAM + memory address register, programmed by DIP switch</figcaption>
+            <div class="ph"><svg><use href="#cam"/></svg>Add a photo at<code>images/cpu-ram.jpg</code></div>
+          </figure>
+          <div class="thumbs three">
+            <figure class="shot">
+              <a href="images/cpu-registers.jpg" target="_blank" rel="noopener">
+                <img src="images/cpu-registers.jpg" alt="A and B register modules with 74LS173 chips, bus transceivers and red LEDs"
+                     onerror="this.closest('.shot').classList.add('empty');this.remove()">
+              </a>
+              <figcaption class="cap">A & B registers</figcaption>
+              <div class="ph"><svg><use href="#cam"/></svg><code>cpu-registers.jpg</code></div>
+            </figure>
+            <figure class="shot">
+              <a href="images/cpu-output.jpg" target="_blank" rel="noopener">
+                <img src="images/cpu-output.jpg" alt="Output module: EEPROM decoder driving four seven-segment displays"
+                     onerror="this.closest('.shot').classList.add('empty');this.remove()">
+              </a>
+              <figcaption class="cap">Output display</figcaption>
+              <div class="ph"><svg><use href="#cam"/></svg><code>cpu-output.jpg</code></div>
+            </figure>
+            <figure class="shot">
+              <a href="images/cpu-clock.jpg" target="_blank" rel="noopener">
+                <img src="images/cpu-clock.jpg" alt="Clock module running, with 555 timers and logic gates and LEDs lit"
+                     onerror="this.closest('.shot').classList.add('empty');this.remove()">
+              </a>
+              <figcaption class="cap">Clock module, running</figcaption>
+              <div class="ph"><svg><use href="#cam"/></svg><code>cpu-clock.jpg</code></div>
+            </figure>
+            <figure class="shot">
+              <a href="images/cpu-clock-2.jpg" target="_blank" rel="noopener">
+                <img src="images/cpu-clock-2.jpg" alt="Clock module with speed potentiometer, manual step button and mode switch"
+                     onerror="this.closest('.shot').classList.add('empty');this.remove()">
+              </a>
+              <figcaption class="cap">Clock: step & speed control</figcaption>
+              <div class="ph"><svg><use href="#cam"/></svg><code>cpu-clock-2.jpg</code></div>
+            </figure>
+            <figure class="shot wide">
+              <a href="images/cpu-reference.jpg" target="_blank" rel="noopener">
+                <img src="images/cpu-reference.jpg" alt="Ben Eater's completed breadboard 8-bit computer, the reference design for this build"
+                     onerror="this.closest('.shot').classList.add('empty');this.remove()">
+              </a>
+              <figcaption class="cap">Reference design · photo: Ben Eater</figcaption>
+              <div class="ph"><svg><use href="#cam"/></svg><code>cpu-reference.jpg</code></div>
+            </figure>
+          </div>
+        </div>
         <div class="body">
           <p class="kicker">Computer Architecture · Team Build</p>
           <h3>8-Bit CPU from Scratch</h3>
           <p>A team-built 8-bit computer based on Ben Eater's bus architecture, wired module by module and carried over to an FPGA.</p>
           <ul class="points">
-            <li>Shared 8-bit bus with registers, ALU, RAM and program counter</li>
-            <li>Control logic and microcode for the instruction set</li>
-            <li>Debugged with a logic analyzer and bench supply</li>
+            <li>Clock built from 555 timers with adjustable speed, manual single-step and run/step switching</li>
+            <li>A and B registers on 74LS173s, driving a shared 8-bit bus through tri-state transceivers</li>
+            <li>RAM and memory address register, programmed by hand with DIP switches</li>
+            <li>Output register decoded by an EEPROM onto a four-digit seven-segment display</li>
+            <li>Control logic and microcode for the instruction set, debugged with a logic analyzer</li>
           </ul>
           <div class="tags"><span class="tag">Digital Logic</span><span class="tag">FPGA</span><span class="tag">Architecture</span></div>
         </div>
       </article>
- 
+
+      <!-- Gaucho Rocket Project: schematic + prototyping photos -->
       <article class="feature">
-        <figure class="shot">
-          <img src="images/rocket-avionics.jpg" alt="Gaucho Rocket Project avionics board"
-               onerror="this.parentElement.classList.add('empty');this.remove()">
-          <div class="ph"><svg><use href="#cam"/></svg>Add a photo at<code>images/rocket-avionics.jpg</code></div>
-        </figure>
+        <div class="gallery">
+          <figure class="shot main">
+            <a href="images/rocket-schematic.png" target="_blank" rel="noopener" aria-label="Open the full-size schematic">
+              <img src="images/rocket-schematic.png"
+                   alt="KiCad schematic: four MAX31856 thermocouple converters sharing an SPI bus with an STM32L496 microcontroller"
+                   onerror="this.closest('.shot').classList.add('empty');this.remove()">
+            </a>
+            <span class="zoom">View full size</span>
+            <figcaption class="cap">HOTFire board schematic · 4 × MAX31856 → STM32L496</figcaption>
+            <div class="ph"><svg><use href="#cam"/></svg>Add the schematic at<code>images/rocket-schematic.png</code></div>
+          </figure>
+          <div class="thumbs">
+            <figure class="shot">
+              <img src="images/max31856-breakout.jpg" alt="MAX31856 thermocouple amplifier breakout board with screw terminal"
+                   onerror="this.closest('.shot').classList.add('empty');this.remove()">
+              <figcaption class="cap">MAX31856 breakout used for bench prototyping</figcaption>
+              <div class="ph"><svg><use href="#cam"/></svg><code>images/max31856-breakout.jpg</code></div>
+            </figure>
+            <figure class="shot">
+              <img src="images/thermocouple-probe.jpg" alt="K-type thermocouple probe wired into a MAX31856 breakout"
+                   onerror="this.closest('.shot').classList.add('empty');this.remove()">
+              <figcaption class="cap">K-type thermocouple into the converter</figcaption>
+              <div class="ph"><svg><use href="#cam"/></svg><code>images/thermocouple-probe.jpg</code></div>
+            </figure>
+          </div>
+        </div>
         <div class="body">
           <p class="kicker">Gaucho Rocket Project · Avionics</p>
-          <h3>Rocket Avionics & Telemetry</h3>
-          <p>Flight electronics for telemetry and data acquisition, including a board that records combustion-chamber temperature during hot-fire tests.</p>
+          <h3>Hot-Fire Thermocouple DAQ Board</h3>
+          <p>A KiCad board that reads combustion-chamber temperatures during hot-fire tests: four MAX31856 thermocouple converters feeding an STM32L496 on a single PCB.</p>
           <ul class="points">
-            <li>Thermocouple DAQ PCB in KiCad (STM32 + MAX31856)</li>
+            <li>Four K-type channels on one shared SPI bus, each with its own chip-select</li>
+            <li>Per-channel data-ready and fault lines, so the MCU knows when a reading is fresh or a probe has opened</li>
             <li>Logs chamber temperatures to microSD so data survives the test</li>
-            <li>Onboarding task for new avionics members</li>
+            <li>Prototyped on MAX31856 breakouts; now the onboarding task for new avionics members</li>
           </ul>
-          <div class="tags"><span class="tag">STM32</span><span class="tag">KiCad</span><span class="tag">FPGA</span><span class="tag">Sensors</span></div>
+          <div class="tags"><span class="tag">STM32</span><span class="tag">KiCad</span><span class="tag">MAX31856</span><span class="tag">SPI</span><span class="tag">Sensors</span></div>
+          <a class="link" href="https://github.com/Gaucho-Rocket-Project/HOTFire-Board-2" target="_blank" rel="noopener">HOTFire-Board-2 on GitHub ›</a>
         </div>
       </article>
- 
+
     </div>
- 
+
     <p class="more">More Projects</p>
     <div class="grid">
- 
+
       <article class="card">
         <figure class="shot">
           <img src="images/chatbot-memory.jpg" alt="Chart from the chatbot memory study" onerror="this.parentElement.classList.add('empty');this.remove()">
@@ -400,7 +499,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <p>Compared chatbot architectures with and without long-term memory across 3,000 prompts.</p>
         <div class="foot"><span>Published on arXiv</span><a href="#research">Paper ›</a></div>
       </article>
- 
+
       <article class="card">
         <figure class="shot">
           <img src="images/push-ai.jpg" alt="Push AI architecture diagram" onerror="this.parentElement.classList.add('empty');this.remove()">
@@ -410,7 +509,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <p>A push-email-inspired design for on-device LLM inference, using cached memory to skip redundant computation.</p>
         <div class="foot"><span>Paper under review</span><a href="https://github.com/AryanGautam842" target="_blank" rel="noopener">GitHub ›</a></div>
       </article>
- 
+
       <article class="card">
         <figure class="shot">
           <img src="images/movemate.jpg" alt="MoveMate app screenshot" onerror="this.parentElement.classList.add('empty');this.remove()">
@@ -420,7 +519,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <p>A peer-to-peer storage marketplace web app built with React and Vite, with a public demo.</p>
         <div class="foot"><span>Web app</span><a href="https://github.com/AryanGautam842" target="_blank" rel="noopener">GitHub ›</a></div>
       </article>
- 
+
       <article class="card">
         <figure class="shot">
           <img src="images/rc-boat.jpg" alt="Remote-controlled boat" onerror="this.parentElement.classList.add('empty');this.remove()">
@@ -430,7 +529,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <p>Hull designed in CAD, electronics integrated, and microcontrollers programmed for wireless real-time control.</p>
         <div class="foot"><span>ECE Project · UCSB</span></div>
       </article>
- 
+
       <article class="card">
         <figure class="shot">
           <img src="images/ml-recommendations.jpg" alt="Machine learning model output" onerror="this.parentElement.classList.add('empty');this.remove()">
@@ -440,7 +539,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <p>Product recommenders, customer segmentation models, and lead-conversion predictions.</p>
         <div class="foot"><span>MIT Schwarzman College of Computing program</span></div>
       </article>
- 
+
       <article class="card">
         <figure class="shot">
           <img src="images/limits.jpg" alt="Asymptotic limits illustration" onerror="this.parentElement.classList.add('empty');this.remove()">
@@ -450,11 +549,11 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
         <p>Where students' understanding of limits breaks down, and a structured way to teach it before derivatives.</p>
         <div class="foot"><span>Published · IJRES</span><a href="#research">Paper ›</a></div>
       </article>
- 
+
     </div>
   </div>
 </section>
- 
+
 <!-- Research -->
 <section class="block" id="research">
   <div class="wrap">
@@ -463,7 +562,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <h2>Publications</h2>
       <div class="rule"></div>
     </div>
- 
+
     <div class="papers">
       <article class="paper">
         <span class="date">Dec 2025</span>
@@ -494,7 +593,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
   </div>
 </section>
- 
+
 <!-- Experience -->
 <section class="block tint" id="experience">
   <div class="wrap">
@@ -503,7 +602,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
       <h2>Roles & Positions</h2>
       <div class="rule"></div>
     </div>
- 
+
     <div class="exp">
       <div class="job"><span class="when">Aug 2026 — Present</span><h3>Avionics Team Member</h3><p class="org">Gaucho Rocket Project · UCSB</p><p>FPGA and STM32 avionics, flight telemetry, sensor integration and data acquisition hardware.</p></div>
       <div class="job"><span class="when">Oct 2025 — Present</span><h3>Research Assistant</h3><p class="org">High Energy Physics · UCSB Physics</p><p>MilliQan detector research focused on temperature-related signal analysis.</p></div>
@@ -514,7 +613,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
   </div>
 </section>
- 
+
 <!-- Skills -->
 <section class="block" id="skills">
   <div class="wrap">
@@ -531,7 +630,7 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
   </div>
 </section>
- 
+
 <!-- Contact -->
 <section class="contact" id="contact">
   <div class="wrap">
@@ -548,15 +647,15 @@ footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wr
     </div>
   </div>
 </section>
- 
+
 </main>
- 
+
 <footer>
   <div class="wrap">
     <span>© 2026 Aryan Gautam · Gautam City</span>
     <span>Computer Engineering · UC Santa Barbara</span>
   </div>
 </footer>
- 
+
 </body>
 </html>
