@@ -88,6 +88,9 @@ section.tint{background:var(--tint);border-top:1px solid var(--line);border-bott
 .feature .body{min-width:0}
 .feature h3{font-family:var(--f-serif);font-weight:600;font-size:clamp(25px,2.6vw,30px);color:var(--navy);margin:10px 0 12px;line-height:1.2}
 .feature p{color:var(--muted);margin:0 0 16px}
+.feature.brand{grid-template-columns:260px 1fr}
+.feature .logo-shot{aspect-ratio:1/1;background:#fff;border:1px solid var(--line);max-width:260px}
+.feature .logo-shot img{object-fit:contain}
 .points{list-style:none;margin:0 0 20px;padding:0 0 0 20px;border-left:2px solid var(--gold);display:grid;gap:6px}
 .points li{font-size:15.5px;color:#333b4f}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
@@ -96,8 +99,6 @@ section.tint{background:var(--tint);border-top:1px solid var(--line);border-bott
 .link:hover{color:var(--gold)}
 .cta{display:inline-block;margin-top:20px;padding:11px 18px;font-size:13px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#fff;background:var(--navy);border-radius:3px}
 .cta:hover{background:var(--gold)}
-.feature.solo{grid-template-columns:1fr}
-.feature.solo .body{max-width:760px}
 .more{font-size:12.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--navy-2);margin:72px 0 22px}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .card{display:flex;flex-direction:column;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px 16px 22px;transition:box-shadow .2s,transform .2s}
@@ -134,8 +135,11 @@ section.tint{background:var(--tint);border-top:1px solid var(--line);border-bott
 .conf .org{font-size:14.5px;color:var(--navy-2);font-weight:500;margin:0 0 10px}
 .conf p{color:var(--muted);margin:0 0 10px;font-size:15.5px}
 .badge{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#fff;background:var(--navy);border-radius:3px;padding:4px 9px;margin-bottom:6px}
-.interns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.interns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
 .intern{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:6px;padding:24px;min-width:0}
+.intern .logo{width:64px;height:64px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff;margin-bottom:16px;display:grid;place-items:center}
+.intern .logo img{width:100%;height:100%;object-fit:contain}
+.intern .logo.text{background:var(--navy);color:#fff;font-family:var(--f-serif);font-weight:600;font-size:22px;border:0}
 .intern .when,.job .when{font-size:12.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
 .intern h3,.job h3{font-family:var(--f-serif);font-weight:600;font-size:21px;color:var(--navy);margin:6px 0 2px;line-height:1.3}
 .intern .org{font-size:14.5px;color:var(--navy-2);font-weight:500;margin:0 0 12px}
@@ -176,7 +180,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 @media (max-width:980px){
   .profile .wrap{grid-template-columns:1fr;gap:40px}
   .portrait{max-width:240px}
-  .feature{grid-template-columns:1fr;gap:22px;padding:20px}
+  .feature,.feature.brand{grid-template-columns:1fr;gap:22px;padding:20px}
+  .feature .logo-shot{max-width:200px}
   .grid,.skills,.interns{grid-template-columns:repeat(2,minmax(0,1fr))}
   .confs,.certs{grid-template-columns:1fr}
   .contact .wrap{grid-template-columns:1fr}
@@ -375,7 +380,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         </div>
       </article>
 
-      <article class="feature solo">
+      <article class="feature brand">
+        <figure class="shot logo-shot">
+          <img src="images/logo-gaucho-rocket.jpg" alt="Gaucho Rocket Project logo" onerror="this.parentElement.remove()">
+        </figure>
         <div class="body">
           <p class="kicker">Gaucho Rocket Project · Avionics</p>
           <h3>Hot-Fire Thermocouple DAQ Board</h3>
@@ -402,19 +410,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <div class="foot"><span>Published on Zenodo</span><a href="https://zenodo.org/records/21159021" target="_blank" rel="noopener">Read paper ›</a></div>
       </article>
       <article class="card">
-        <figure class="shot"><img src="images/push-ai.jpg" alt="Push AI diagram" onerror="this.parentElement.remove()"></figure>
+        <figure class="shot top"><a href="https://www.ijert.org/from-push-email-to-push-ai-blackberry-inspired-efficiency-in-large-language-models-ijertv15is010644" target="_blank" rel="noopener"><img src="images/push-ai.jpg" alt="Title page of the Push AI paper" onerror="this.closest('.shot').remove()"></a></figure>
         <h3>BlackBerry-Inspired Push AI</h3>
         <p>A hardware-inspired architecture for on-device LLM inference, using cached memory to cut redundant computation by 13% on repeated prompts.</p>
         <div class="foot"><span>Published · IJERT</span><a href="https://www.ijert.org/from-push-email-to-push-ai-blackberry-inspired-efficiency-in-large-language-models-ijertv15is010644" target="_blank" rel="noopener">Read paper ›</a></div>
       </article>
       <article class="card">
-        <figure class="shot"><img src="images/movemate.jpg" alt="MoveMate app screenshot" onerror="this.parentElement.remove()"></figure>
+        <figure class="shot"><img src="images/movemate.jpg" alt="UCSB New Venture Competition logo" onerror="this.parentElement.remove()"></figure>
         <h3>MoveMate</h3>
         <p>A peer-to-peer storage marketplace web app built with React and Vite, with a public demo.</p>
         <div class="foot"><span>Web app</span><a href="https://github.com/AryanGautam842" target="_blank" rel="noopener">GitHub ›</a></div>
       </article>
       <article class="card">
-        <figure class="shot"><img src="images/rc-boat.jpg" alt="Remote-controlled boat" onerror="this.parentElement.remove()"></figure>
+        <figure class="shot"><img src="images/rc-boat.jpg" alt="Remote-controlled boat illustration" onerror="this.parentElement.remove()"></figure>
         <h3>Remote-Controlled Boat</h3>
         <p>Hull designed in CAD, Arduino and STM32 code for wireless control, and a tuned controller–motor link that stretched run time from 2 to 3 hours.</p>
         <div class="foot"><span>ECE Project · UCSB</span></div>
@@ -426,7 +434,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <div class="foot"><span>MIT IDSS · 2025</span><a href="#certifications">Certificate ›</a></div>
       </article>
       <article class="card">
-        <figure class="shot"><img src="images/limits.jpg" alt="Asymptotic limits illustration" onerror="this.parentElement.remove()"></figure>
+        <figure class="shot top"><a href="https://www.ijres.org/papers/Volume-13/Issue-6/1306225240.pdf" target="_blank" rel="noopener"><img src="images/limits.jpg" alt="Title page of the asymptotic limits paper" onerror="this.closest('.shot').remove()"></a></figure>
         <h3>Teaching Asymptotic Limits</h3>
         <p>Where students' understanding of limits breaks down, and a structured way to teach it before derivatives.</p>
         <div class="foot"><span>Published · IJRES</span><a href="https://www.ijres.org/papers/Volume-13/Issue-6/1306225240.pdf" target="_blank" rel="noopener">Read paper ›</a></div>
@@ -528,16 +536,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     </div>
     <div class="interns">
       <article class="intern">
-        <span class="when">Dec 2025 — Present</span>
-        <h3>AI Automation & Systems Intern</h3>
-        <p class="org">Synthesis AI · New York, NY</p>
+        <div class="logo"><img src="images/logo-alignerr.jpg" alt="Alignerr logo" onerror="this.parentElement.remove()"></div>
+        <span class="when">Jun 2026 — Oct 2026</span>
+        <h3>AI Contributor</h3>
+        <p class="org">Alignerr</p>
         <ul>
-          <li>Configure, test and validate AI voice automation workflows</li>
-          <li>Build backend logic scripts and configuration pipelines</li>
-          <li>Deliver customized AI voice solutions for 20+ clients using Git/GitHub</li>
+          <li>Selected as an Alignerr contributor supporting the evaluation and improvement of next-generation AI systems</li>
+          <li>Qualified for project-based work involving AI quality assessment and model evaluation</li>
+          <li>Contributing expertise in AI research, technical analysis, and structured evaluation methodologies</li>
         </ul>
       </article>
       <article class="intern">
+        <div class="logo text">BM</div>
         <span class="when">Jul 2026 — Sep 2026</span>
         <h3>Manufacturing Intern</h3>
         <p class="org">Bhola Maharaj · Jamshedpur, India</p>
@@ -548,6 +558,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         </ul>
       </article>
       <article class="intern">
+        <div class="logo"><img src="images/logo-synthesis.jpg" alt="Synthesis AI logo" onerror="this.parentElement.remove()"></div>
+        <span class="when">Dec 2025 — Jan 2026</span>
+        <h3>AI Automation & Systems Intern</h3>
+        <p class="org">Synthesis AI · New York, NY</p>
+        <ul>
+          <li>Configure, test and validate AI voice automation workflows</li>
+          <li>Build backend logic scripts and configuration pipelines</li>
+          <li>Deliver customized AI voice solutions for 20+ clients using Git/GitHub</li>
+        </ul>
+      </article>
+      <article class="intern">
+        <div class="logo"><img src="images/logo-kse.jpg" alt="KSE Global logo" onerror="this.parentElement.remove()"></div>
         <span class="when">Jul 2025 — Aug 2025</span>
         <h3>Research Intern</h3>
         <p class="org">UCSB Summer Research Program & KSE Global</p>
@@ -595,15 +617,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <p>MIT Institute for Data, Systems, and Society · MIT Schwarzman College of Computing · September 2025</p>
         <a class="link" href="https://www.mygreatlearning.com/certificate/RUZGLTRS" target="_blank" rel="noopener">Verify certificate ›</a>
       </div>
-      <ul class="cert-list">
-        <li><span>International Applied Artificial Intelligence Institute, Level 1</span><span class="yr">2025</span></li>
-        <li><span>Adult First Aid / CPR / AED · American Red Cross</span><span class="yr">2025</span></li>
-        <li><span>Google Advanced Data Analytics Specialization</span><span class="yr">2023</span></li>
-        <li><span>AI for Business Specialization · University of Pennsylvania</span><span class="yr">2023</span></li>
-        <li><span>AI in Healthcare Specialization · Stanford University</span><span class="yr">2023</span></li>
-        <li><span>Google Data Analytics Specialization</span><span class="yr">2023</span></li>
-        <li><span>IBM Cybersecurity Analyst Specialization</span><span class="yr">2023</span></li>
-      </ul>
+      <div>
+        <div class="cert-main" style="margin-bottom:28px">
+          <figure class="shot" style="aspect-ratio:1462/1128">
+            <a href="images/iaai-certificate.jpg" target="_blank" rel="noopener"><img src="images/iaai-certificate.jpg" alt="IAAI Institute Level 1 Accredited Member certificate awarded to Aryan Gautam, September 29, 2025" onerror="this.closest('.shot').classList.add('empty');this.remove()"></a>
+            <div class="ph"><code>images/iaai-certificate.jpg</code></div>
+          </figure>
+          <h3>Level 1 Accredited Member</h3>
+          <p>International Applied Artificial Intelligence Institute (IAAI) · September 2025</p>
+        </div>
+        <ul class="cert-list">
+          <li><span>Adult First Aid / CPR / AED · American Red Cross</span><span class="yr">2025</span></li>
+          <li><span>Google Advanced Data Analytics Specialization</span><span class="yr">2023</span></li>
+          <li><span>AI for Business Specialization · University of Pennsylvania</span><span class="yr">2023</span></li>
+          <li><span>AI in Healthcare Specialization · Stanford University</span><span class="yr">2023</span></li>
+          <li><span>Google Data Analytics Specialization</span><span class="yr">2023</span></li>
+          <li><span>IBM Cybersecurity Analyst Specialization</span><span class="yr">2023</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
