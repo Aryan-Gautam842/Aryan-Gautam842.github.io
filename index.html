@@ -17,8 +17,6 @@ img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gutter)}
-
-/* Top bar */
 .topbar{background:var(--navy-dark);color:#aab3c6;font-size:13px;letter-spacing:1.2px}
 .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:42px;flex-wrap:wrap}
 .topbar .places{display:flex;align-items:center;gap:12px;text-transform:uppercase;flex-wrap:wrap}
@@ -27,8 +25,6 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .topbar .mail{letter-spacing:.3px;display:inline-flex;align-items:center;gap:7px}
 .topbar .mail svg{width:14px;height:14px;stroke:#aab3c6;fill:none;stroke-width:1.6}
 .topbar .mail:hover{color:#fff}
-
-/* Nav */
 .nav{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
 .nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:88px;flex-wrap:wrap;padding-block:12px}
 .brand{display:flex;flex-direction:column;line-height:1}
@@ -36,11 +32,9 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .brand .sub{font-size:10.5px;letter-spacing:2.6px;color:var(--muted);margin-top:8px;text-transform:uppercase}
 .menu{display:flex;gap:clamp(14px,2.2vw,30px);flex-wrap:wrap;align-items:center}
 .menu a{font-size:13.5px;font-weight:500;letter-spacing:.6px;text-transform:uppercase;padding:6px 0;border-bottom:2px solid transparent}
-.menu a:hover,.menu a.active{color:var(--navy);border-bottom-color:var(--navy)}
+.menu a:hover{color:var(--navy);border-bottom-color:var(--navy)}
 .menu a.cv{background:var(--navy);color:#fff;padding:8px 14px;border-radius:3px;border:0}
 .menu a.cv:hover{background:var(--gold);color:#fff}
-
-/* Title band */
 .band{background:linear-gradient(180deg,var(--navy) 0%,#182a52 100%);color:#fff;position:relative;overflow:hidden}
 .band::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(700px 360px at 85% 30%,rgba(106,169,216,.18),transparent 70%)}
 .band .wrap{position:relative;z-index:1;padding-block:64px 72px}
@@ -49,8 +43,6 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .band h1{font-family:var(--f-serif);font-weight:600;font-size:clamp(40px,6vw,66px);line-height:1.1;margin:26px 0 16px;letter-spacing:-.5px}
 .band h1 em{font-style:italic;color:#d9b968;font-weight:500}
 .band .role{font-size:18px;color:#c9d1e2;margin:0}
-
-/* Profile */
 .profile .wrap{display:grid;grid-template-columns:320px 1fr;gap:56px;padding-block:88px;align-items:start}
 .portrait{margin:0;aspect-ratio:1/1;border-radius:50%;overflow:hidden;position:relative;background:#e2eaf6;border:6px solid #fff;box-shadow:0 0 0 1px var(--line),0 24px 48px -28px rgba(21,36,71,.5);max-width:320px}
 .portrait img{width:100%;height:100%;object-fit:cover}
@@ -67,24 +59,17 @@ a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .stat .cap{font-size:13.5px;font-weight:500;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .about h3{font-size:19px;font-weight:600;margin:0 0 14px}
 .about p{margin:0 0 16px;font-size:17px;color:#333b4f}
-
-/* Sections */
 section.block{padding-block:clamp(72px,9vw,104px)}
 section.tint{background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .head{margin-bottom:44px;max-width:760px}
 .head h2{font-family:var(--f-serif);font-weight:600;font-size:clamp(32px,4vw,42px);color:var(--navy);margin:12px 0 10px;line-height:1.15}
 .head p{color:var(--muted);font-size:17px;margin:0}
 .rule{width:56px;height:3px;background:var(--gold);margin-top:18px}
-
-/* Photo slots */
 .shot{margin:0;position:relative;overflow:hidden;background:#e9eef7;aspect-ratio:4/3;border-radius:6px}
 .shot img{width:100%;height:100%;object-fit:cover}
 .ph{display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;gap:8px;padding:16px;background:linear-gradient(160deg,#e9eef7,#dbe4f2);font-size:13px;color:var(--muted);text-align:center}
-.ph svg{width:34px;height:34px;stroke:var(--navy-2);fill:none;stroke-width:1.4}
 .ph code{font-size:12px;color:var(--navy);background:#fff;padding:2px 7px;border-radius:4px;border:1px solid var(--line)}
 .empty .ph{display:flex}
-
-/* Gallery */
 .gallery{display:grid;gap:10px;min-width:0}
 .gallery .shot{border:1px solid var(--line)}
 .gallery .shot>a{display:block;width:100%;height:100%}
@@ -98,8 +83,6 @@ section.tint{background:var(--tint);border-top:1px solid var(--line);border-bott
 .gallery .cap{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 6px;font-size:11.5px;line-height:1.35;color:#fff;background:linear-gradient(transparent,rgba(14,24,48,.82))}
 .gallery .zoom{position:absolute;top:8px;right:8px;font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:3px;padding:3px 8px}
 .gallery .shot.empty .cap,.gallery .shot.empty .zoom{display:none}
-
-/* Featured projects */
 .featured{display:grid;gap:28px}
 .feature{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:28px}
 .feature .body{min-width:0}
@@ -109,14 +92,12 @@ section.tint{background:var(--tint);border-top:1px solid var(--line);border-bott
 .points li{font-size:15.5px;color:#333b4f}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
 .tag{font-size:11.5px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--navy-2);border:1px solid #cdd6e6;border-radius:3px;padding:4px 9px}
-.feature .link,.link{display:inline-block;margin-top:18px;font-size:13.5px;font-weight:600;color:var(--navy)}
+.link{display:inline-block;margin-top:18px;font-size:13.5px;font-weight:600;color:var(--navy)}
 .link:hover{color:var(--gold)}
-.feature .cta{display:inline-block;margin-top:20px;padding:11px 18px;font-size:13px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#fff;background:var(--navy);border-radius:3px}
-.feature .cta:hover{background:var(--gold)}
+.cta{display:inline-block;margin-top:20px;padding:11px 18px;font-size:13px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#fff;background:var(--navy);border-radius:3px}
+.cta:hover{background:var(--gold)}
 .feature.solo{grid-template-columns:1fr}
 .feature.solo .body{max-width:760px}
-
-/* Cards */
 .more{font-size:12.5px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--navy-2);margin:72px 0 22px}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .card{display:flex;flex-direction:column;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px 16px 22px;transition:box-shadow .2s,transform .2s}
@@ -128,8 +109,6 @@ section.tint{background:var(--tint);border-top:1px solid var(--line);border-bott
 .card .foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--faint);border-top:1px solid var(--line);padding-top:12px}
 .card .foot a{color:var(--navy);font-weight:600}
 .card .foot a:hover{color:var(--gold)}
-
-/* Research */
 .paper{display:grid;grid-template-columns:130px 1fr auto;gap:28px;padding:28px 0;border-bottom:1px solid var(--line);align-items:start}
 .paper:first-child{border-top:1px solid var(--line)}
 .paper .date{font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);padding-top:4px}
@@ -141,8 +120,6 @@ section.tint{background:var(--tint);border-top:1px solid var(--line);border-bott
 .read:hover{color:var(--gold)}
 .status{font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;padding:5px 11px;border-radius:3px;white-space:nowrap;border:1px solid #cdd6e6;color:var(--muted)}
 .status.pub{background:var(--navy);border-color:var(--navy);color:#fff}
-
-/* Conferences */
 .confs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:start}
 .conf{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:22px;display:grid;gap:18px;min-width:0}
 .conf .shot{border:1px solid var(--line);background:#fff}
@@ -153,29 +130,21 @@ section.tint{background:var(--tint);border-top:1px solid var(--line);border-bott
 .conf .shot.logo{aspect-ratio:1320/700;border:0}
 .conf .shot.logo img{object-fit:contain}
 .conf .when{font-size:12.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
-.conf h3{font-family:var(--f-serif);font-weight:600;font-size:23px;color:var(--navy);margin:6px 0 6px;line-height:1.25}
+.conf h3{font-family:var(--f-serif);font-weight:600;font-size:23px;color:var(--navy);margin:6px 0;line-height:1.25}
 .conf .org{font-size:14.5px;color:var(--navy-2);font-weight:500;margin:0 0 10px}
 .conf p{color:var(--muted);margin:0 0 10px;font-size:15.5px}
-.conf .badge{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#fff;background:var(--navy);border-radius:3px;padding:4px 9px;margin-bottom:6px}
-
-/* Internships */
+.badge{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:#fff;background:var(--navy);border-radius:3px;padding:4px 9px;margin-bottom:6px}
 .interns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .intern{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:6px;padding:24px;min-width:0}
-.intern .when{font-size:12.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
-.intern h3{font-family:var(--f-serif);font-weight:600;font-size:21px;color:var(--navy);margin:6px 0 2px;line-height:1.3}
+.intern .when,.job .when{font-size:12.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+.intern h3,.job h3{font-family:var(--f-serif);font-weight:600;font-size:21px;color:var(--navy);margin:6px 0 2px;line-height:1.3}
 .intern .org{font-size:14.5px;color:var(--navy-2);font-weight:500;margin:0 0 12px}
 .intern ul{margin:0;padding-left:18px;color:#333b4f;font-size:15px;display:grid;gap:6px}
-.intern .award{display:inline-block;margin-top:14px;font-size:11.5px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:3px;padding:4px 9px}
-
-/* Experience */
+.award{display:inline-block;margin-top:14px;font-size:11.5px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:3px;padding:4px 9px}
 .exp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px}
 .job{padding:26px 0;border-top:1px solid var(--line)}
-.job .when{font-size:12.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
-.job h3{font-family:var(--f-serif);font-weight:600;font-size:21px;color:var(--navy);margin:6px 0 2px}
 .job .org{font-size:14.5px;color:var(--navy-2);font-weight:500;margin:0 0 8px}
 .job p{color:var(--muted);margin:0;font-size:15.5px}
-
-/* Certifications */
 .certs{display:grid;grid-template-columns:1.2fr 1fr;gap:44px;align-items:start}
 .cert-main{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:22px}
 .cert-main .shot{aspect-ratio:1600/1131;border:1px solid var(--line);background:#fff}
@@ -187,14 +156,10 @@ section.tint{background:var(--tint);border-top:1px solid var(--line);border-bott
 .cert-list li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px}
 .cert-list li:first-child{border-top:1px solid var(--line)}
 .cert-list .yr{color:var(--gold);font-weight:600;font-size:13px;letter-spacing:1px;white-space:nowrap}
-
-/* Skills */
 .skills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
 .skillset{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:4px;padding:22px}
 .skillset h3{font-size:12.5px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--navy-2);margin:0 0 14px}
 .skillset ul{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:15.5px}
-
-/* Contact */
 .contact{background:var(--navy);color:#fff}
 .contact .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;padding-block:80px}
 .contact .kicker{color:#d9b968}
@@ -208,8 +173,6 @@ section.tint{background:var(--tint);border-top:1px solid var(--line);border-bott
 .btn.gold{background:var(--gold);border-color:var(--gold)}
 footer{background:var(--navy-dark);color:#8f99b0;font-size:13.5px}
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:26px}
-
-/* Mobile */
 @media (max-width:980px){
   .profile .wrap{grid-template-columns:1fr;gap:40px}
   .portrait{max-width:240px}
@@ -234,3 +197,458 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 }
 </style>
 </head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="places">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      <span>Santa Barbara, CA</span><span class="dot">•</span>
+      <span>UC Santa Barbara</span><span class="dot">•</span>
+      <span>Jamshedpur, India</span>
+    </div>
+    <a class="mail" href="mailto:aryangautam@ucsb.edu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      aryangautam@ucsb.edu
+    </a>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="name">Aryan Gautam</span>
+      <span class="sub">Hardware &nbsp;|&nbsp; Research &nbsp;|&nbsp; AI</span>
+    </a>
+    <div class="menu">
+      <a href="#projects">Projects</a>
+      <a href="#research">Research</a>
+      <a href="#conferences">Conferences</a>
+      <a href="#internships">Internships</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+      <a class="cv" href="images/aryan-gautam-cv.pdf" target="_blank" rel="noopener">CV</a>
+    </div>
+  </div>
+</nav>
+
+<header class="band" id="top">
+  <div class="wrap">
+    <div class="crumbs"><span>Home</span><span aria-hidden="true">›</span><span>Portfolio</span><span aria-hidden="true">›</span><span class="here">Aryan Gautam</span></div>
+    <h1>Hi, this is Gautam. Welcome to <em>Gautam City.</em></h1>
+    <p class="role">Computer Engineering · UC Santa Barbara</p>
+  </div>
+</header>
+
+<main>
+
+<section class="profile">
+  <div class="wrap">
+    <figure class="portrait">
+      <img src="images/profile.jpg" alt="Portrait of Aryan Gautam" onerror="this.parentElement.classList.add('empty');this.remove()">
+      <div class="ph"><code>images/profile.jpg</code></div>
+    </figure>
+    <div class="info">
+      <p class="kicker">Engineer · Researcher</p>
+      <h2>Aryan Gautam</h2>
+      <p class="lede">Computer Engineering student building flight electronics, particle-detector instrumentation, and AI systems that remember.</p>
+      <div class="actions">
+        <a class="pbtn solid" href="images/aryan-gautam-cv.pdf" target="_blank" rel="noopener">View my CV</a>
+        <a class="pbtn" href="images/aryan-gautam-cv.pdf" download>Download CV (PDF)</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="num">3</div><div class="cap">Research papers published</div></div>
+        <div class="stat"><div class="num">2</div><div class="cap">Conferences</div></div>
+        <div class="stat"><div class="num">3,000</div><div class="cap">Prompts in my AI memory study</div></div>
+        <div class="stat"><div class="num">20+</div><div class="cap">Clients served with AI voice automation</div></div>
+      </div>
+      <div class="about">
+        <h3>About</h3>
+        <p>I'm happiest when a project forces me to understand something all the way down. At UCSB I work with the High Energy Physics group on the MilliQan experiment, studying how temperature shifts the signals a detector records from cosmic-ray muons. On the Gaucho Rocket Project I design the avionics that read combustion-chamber temperatures during hot-fire tests.</p>
+        <p>Outside the lab I write research on how memory changes chatbot performance, build an 8-bit CPU with my team, and mentor students through ACM's research branch. Gautam City is where all of it lives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block tint" id="projects">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Selected Work</p>
+      <h2>Projects</h2>
+      <p>Three hardware builds I've spent the most late nights on, followed by software, AI, and research work.</p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="featured">
+
+      <article class="feature">
+        <div class="gallery">
+          <figure class="shot main">
+            <a href="images/muon1.jpg" target="_blank" rel="noopener"><img src="images/muon1.jpg" alt="Two stacked Geiger counter boards wired to an Arduino, with an LCD showing coincidence and per-tube counts" onerror="this.closest('.shot').classList.add('empty');this.remove()"></a>
+            <span class="zoom">View full size</span>
+            <figcaption class="cap">Live readout: coincidence counts plus each tube's singles</figcaption>
+            <div class="ph"><code>images/muon1.jpg</code></div>
+          </figure>
+          <div class="thumbs two">
+            <figure class="shot">
+              <a href="images/muon.jpg" target="_blank" rel="noopener"><img src="images/muon.jpg" alt="Two Geiger tube boards stacked and wired to an Arduino Uno" onerror="this.closest('.shot').classList.add('empty');this.remove()"></a>
+              <figcaption class="cap">Stacked Geiger tubes + Arduino</figcaption>
+              <div class="ph"><code>muon.jpg</code></div>
+            </figure>
+            <figure class="shot">
+              <a href="images/muon3.jpg" target="_blank" rel="noopener"><img src="images/muon3.jpg" alt="Hand-drawn Arduino and LCD pin map" onerror="this.closest('.shot').classList.add('empty');this.remove()"></a>
+              <figcaption class="cap">Hand-drawn Arduino & LCD pin map</figcaption>
+              <div class="ph"><code>muon3.jpg</code></div>
+            </figure>
+            <figure class="shot full">
+              <a href="images/muon4.jpg" target="_blank" rel="noopener"><img src="images/muon4.jpg" alt="Block diagram: two Geiger counters into an AND gate, pulse conditioning, Arduino and data collection" onerror="this.closest('.shot').classList.add('empty');this.remove()"></a>
+              <figcaption class="cap">Signal chain: Geiger 1 & 2 → AND → pulse conditioning → Arduino</figcaption>
+              <div class="ph"><code>muon4.jpg</code></div>
+            </figure>
+          </div>
+        </div>
+        <div class="body">
+          <p class="kicker">High Energy Physics · UCSB</p>
+          <h3>Muon Detector & MilliQan Research</h3>
+          <p>A two-tube coincidence detector for cosmic-ray muons, built to study how temperature shifts detector readings, alongside my work on the MilliQan experiment.</p>
+          <ul class="points">
+            <li>Two stacked Geiger tubes fed through an AND gate, so only particles passing through both tubes, mostly muons, are counted</li>
+            <li>Pulse-conditioning stage cleans the signal before it reaches the Arduino</li>
+            <li>LCD shows live coincidence counts alongside each tube's individual count</li>
+            <li>Temperature sensor on the breadboard so counts can be compared against temperature</li>
+          </ul>
+          <div class="tags"><span class="tag">Instrumentation</span><span class="tag">Detectors</span><span class="tag">Arduino</span><span class="tag">Data Analysis</span></div>
+          <a class="cta" href="https://canva.link/gkk6rvufyow3mzw" target="_blank" rel="noopener">View the research presentation ›</a>
+        </div>
+      </article>
+
+      <article class="feature">
+        <div class="gallery">
+          <figure class="shot main">
+            <a href="images/cpu-ram.jpg" target="_blank" rel="noopener"><img src="images/cpu-ram.jpg" alt="Breadboarded RAM and memory address register with DIP switches and LEDs" onerror="this.closest('.shot').classList.add('empty');this.remove()"></a>
+            <span class="zoom">View full size</span>
+            <figcaption class="cap">RAM + memory address register, programmed by DIP switch</figcaption>
+            <div class="ph"><code>images/cpu-ram.jpg</code></div>
+          </figure>
+          <div class="thumbs">
+            <figure class="shot">
+              <a href="images/cpu-registers.jpg" target="_blank" rel="noopener"><img src="images/cpu-registers.jpg" alt="A and B register modules with red LEDs" onerror="this.closest('.shot').classList.add('empty');this.remove()"></a>
+              <figcaption class="cap">A & B registers</figcaption>
+              <div class="ph"><code>cpu-registers.jpg</code></div>
+            </figure>
+            <figure class="shot">
+              <a href="images/cpu-output.jpg" target="_blank" rel="noopener"><img src="images/cpu-output.jpg" alt="Output module driving four seven-segment displays" onerror="this.closest('.shot').classList.add('empty');this.remove()"></a>
+              <figcaption class="cap">Output display</figcaption>
+              <div class="ph"><code>cpu-output.jpg</code></div>
+            </figure>
+            <figure class="shot">
+              <a href="images/cpu-clock.jpg" target="_blank" rel="noopener"><img src="images/cpu-clock.jpg" alt="Clock module running with LEDs lit" onerror="this.closest('.shot').classList.add('empty');this.remove()"></a>
+              <figcaption class="cap">Clock module, running</figcaption>
+              <div class="ph"><code>cpu-clock.jpg</code></div>
+            </figure>
+            <figure class="shot">
+              <a href="images/cpu-clock-2.jpg" target="_blank" rel="noopener"><img src="images/cpu-clock-2.jpg" alt="Clock module with speed knob, step button and mode switch" onerror="this.closest('.shot').classList.add('empty');this.remove()"></a>
+              <figcaption class="cap">Clock: step & speed control</figcaption>
+              <div class="ph"><code>cpu-clock-2.jpg</code></div>
+            </figure>
+            <figure class="shot wide">
+              <a href="images/cpu-reference.jpg" target="_blank" rel="noopener"><img src="images/cpu-reference.jpg" alt="Ben Eater's completed breadboard 8-bit computer, the reference design" onerror="this.closest('.shot').classList.add('empty');this.remove()"></a>
+              <figcaption class="cap">Reference design · photo: Ben Eater</figcaption>
+              <div class="ph"><code>cpu-reference.jpg</code></div>
+            </figure>
+          </div>
+        </div>
+        <div class="body">
+          <p class="kicker">Computer Architecture · Team Build</p>
+          <h3>8-Bit CPU from Scratch</h3>
+          <p>A team-built 8-bit computer based on Ben Eater's bus architecture, wired module by module and carried over to an FPGA.</p>
+          <ul class="points">
+            <li>Clock built from 555 timers with adjustable speed, manual single-step and run/step switching</li>
+            <li>A and B registers on 74LS173s, driving a shared 8-bit bus through tri-state transceivers</li>
+            <li>RAM and memory address register, programmed by hand with DIP switches</li>
+            <li>Output register decoded by an EEPROM onto a four-digit seven-segment display</li>
+            <li>Control logic and microcode for the instruction set, debugged with a logic analyzer</li>
+          </ul>
+          <div class="tags"><span class="tag">Digital Logic</span><span class="tag">FPGA</span><span class="tag">Architecture</span></div>
+        </div>
+      </article>
+
+      <article class="feature solo">
+        <div class="body">
+          <p class="kicker">Gaucho Rocket Project · Avionics</p>
+          <h3>Hot-Fire Thermocouple DAQ Board</h3>
+          <p>A KiCad board that reads combustion-chamber temperatures during hot-fire tests: four MAX31856 thermocouple converters feeding an STM32L496 on a single PCB.</p>
+          <ul class="points">
+            <li>Four K-type channels on one shared SPI bus, each with its own chip-select</li>
+            <li>Per-channel data-ready and fault lines, so the MCU knows when a reading is fresh or a probe has opened</li>
+            <li>Logs chamber temperatures to microSD so data survives the test</li>
+            <li>Prototyped on MAX31856 breakouts; now the onboarding task for new avionics members</li>
+          </ul>
+          <div class="tags"><span class="tag">STM32</span><span class="tag">KiCad</span><span class="tag">MAX31856</span><span class="tag">SPI</span><span class="tag">Sensors</span></div>
+          <a class="link" href="https://github.com/Gaucho-Rocket-Project/HOTFire-Board-2" target="_blank" rel="noopener">HOTFire-Board-2 on GitHub ›</a>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="more">More Projects</p>
+    <div class="grid">
+      <article class="card">
+        <figure class="shot top"><a href="https://zenodo.org/records/21159021" target="_blank" rel="noopener"><img src="images/chatbot-memory.jpg" alt="Title page of the chatbot memory paper" onerror="this.closest('.shot').remove()"></a></figure>
+        <h3>AI & Chatbot Memory</h3>
+        <p>Compared memory-enabled and non-memory chatbots across thousands of prompts using a new 3D evaluation framework.</p>
+        <div class="foot"><span>Published on Zenodo</span><a href="https://zenodo.org/records/21159021" target="_blank" rel="noopener">Read paper ›</a></div>
+      </article>
+      <article class="card">
+        <figure class="shot"><img src="images/push-ai.jpg" alt="Push AI diagram" onerror="this.parentElement.remove()"></figure>
+        <h3>BlackBerry-Inspired Push AI</h3>
+        <p>A hardware-inspired architecture for on-device LLM inference, using cached memory to cut redundant computation by 13% on repeated prompts.</p>
+        <div class="foot"><span>Published · IJERT</span><a href="https://www.ijert.org/from-push-email-to-push-ai-blackberry-inspired-efficiency-in-large-language-models-ijertv15is010644" target="_blank" rel="noopener">Read paper ›</a></div>
+      </article>
+      <article class="card">
+        <figure class="shot"><img src="images/movemate.jpg" alt="MoveMate app screenshot" onerror="this.parentElement.remove()"></figure>
+        <h3>MoveMate</h3>
+        <p>A peer-to-peer storage marketplace web app built with React and Vite, with a public demo.</p>
+        <div class="foot"><span>Web app</span><a href="https://github.com/AryanGautam842" target="_blank" rel="noopener">GitHub ›</a></div>
+      </article>
+      <article class="card">
+        <figure class="shot"><img src="images/rc-boat.jpg" alt="Remote-controlled boat" onerror="this.parentElement.remove()"></figure>
+        <h3>Remote-Controlled Boat</h3>
+        <p>Hull designed in CAD, Arduino and STM32 code for wireless control, and a tuned controller–motor link that stretched run time from 2 to 3 hours.</p>
+        <div class="foot"><span>ECE Project · UCSB</span></div>
+      </article>
+      <article class="card">
+        <figure class="shot"><a href="#certifications"><img src="images/mit-certificate.jpg" alt="MIT IDSS certificate" onerror="this.closest('.shot').remove()" style="object-fit:contain;background:#fff"></a></figure>
+        <h3>ML & Recommendations</h3>
+        <p>Amazon product recommender, customer segmentation, and a lead-scoring model that improved lead-to-customer conversion by 3%.</p>
+        <div class="foot"><span>MIT IDSS · 2025</span><a href="#certifications">Certificate ›</a></div>
+      </article>
+      <article class="card">
+        <figure class="shot"><img src="images/limits.jpg" alt="Asymptotic limits illustration" onerror="this.parentElement.remove()"></figure>
+        <h3>Teaching Asymptotic Limits</h3>
+        <p>Where students' understanding of limits breaks down, and a structured way to teach it before derivatives.</p>
+        <div class="foot"><span>Published · IJRES</span><a href="https://www.ijres.org/papers/Volume-13/Issue-6/1306225240.pdf" target="_blank" rel="noopener">Read paper ›</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="research">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Research & Publications</p>
+      <h2>Publications</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="papers">
+      <article class="paper">
+        <span class="date">Dec 2025</span>
+        <div class="body">
+          <h3><a href="https://zenodo.org/records/21159021" target="_blank" rel="noopener">Does Long-Term Memory Improve Chatbot Performance?</a></h3>
+          <p>A comparative study of chatbot architectures with and without memory, evaluating response quality across 3,000 prompts.</p>
+          <p class="venue">Zenodo · <a class="read" href="https://zenodo.org/records/21159021" target="_blank" rel="noopener">Read paper ›</a></p>
+        </div>
+        <span class="status pub">Published</span>
+      </article>
+      <article class="paper">
+        <span class="date">Jan 2026</span>
+        <div class="body">
+          <h3><a href="https://www.ijert.org/from-push-email-to-push-ai-blackberry-inspired-efficiency-in-large-language-models-ijertv15is010644" target="_blank" rel="noopener">From Push Email to Push AI: BlackBerry-Inspired Efficiency in Large Language Models</a></h3>
+          <p>Applies BlackBerry-style push efficiency to large language models through cached memory and less recomputation on repeated prompts.</p>
+          <p class="venue">International Journal of Engineering Research & Technology (IJERT) · <a class="read" href="https://www.ijert.org/from-push-email-to-push-ai-blackberry-inspired-efficiency-in-large-language-models-ijertv15is010644" target="_blank" rel="noopener">Read paper ›</a></p>
+        </div>
+        <span class="status pub">Published</span>
+      </article>
+      <article class="paper">
+        <span class="date">Jun 2025</span>
+        <div class="body">
+          <h3><a href="https://www.ijres.org/papers/Volume-13/Issue-6/1306225240.pdf" target="_blank" rel="noopener">Why Asymptotic Behavior of Limits Is Important for Students to Learn Before Differentiation</a></h3>
+          <p>Proposes a structured approach to teaching limits that builds conceptual understanding of asymptotic behavior.</p>
+          <p class="venue">International Journal of Research in Engineering & Science (IJRES) · <a class="read" href="https://www.ijres.org/papers/Volume-13/Issue-6/1306225240.pdf" target="_blank" rel="noopener">Read paper (PDF) ›</a></p>
+        </div>
+        <span class="status pub">Published</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block tint" id="conferences">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Presentations</p>
+      <h2>Conferences</h2>
+      <p>Where I've taken my research to present and discuss.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="confs">
+      <article class="conf">
+        <figure class="shot poster">
+          <a href="images/urca-poster.jpg" target="_blank" rel="noopener"><img src="images/urca-poster.jpg" alt="Research poster: Comparative Analysis of Chatbot Architectures With and Without Memory" onerror="this.closest('.shot').classList.add('empty');this.remove()"></a>
+          <div class="ph"><code>images/urca-poster.jpg</code></div>
+        </figure>
+        <div>
+          <span class="badge">Poster presentation</span>
+          <h3>URCA Research Colloquium</h3>
+          <p class="org">Undergraduate Research & Creative Activities · UC Santa Barbara</p>
+          <p>Presented <em>Comparative Analysis of Chatbot Architectures With and Without Memory</em>: does long-term memory improve chatbot performance enough to justify its computational cost?</p>
+          <a class="link" href="images/urca-poster.jpg" target="_blank" rel="noopener">View full poster ›</a>
+        </div>
+      </article>
+      <article class="conf">
+        <figure class="shot slides">
+          <a href="images/aim-2026-slides.pdf" target="_blank" rel="noopener"><img src="images/aim-slides-cover.jpg" alt="Title slide of the AIM 2026 talk" onerror="this.closest('.shot').classList.add('empty');this.remove()"></a>
+          <div class="ph"><code>images/aim-slides-cover.jpg</code></div>
+        </figure>
+        <figure class="shot logo">
+          <a href="https://sites.google.com/view/aimanagement/aim2026" target="_blank" rel="noopener"><img src="images/aim-conference.jpg" alt="The Sixth AI in Management Conference, USC Marshall School of Business" onerror="this.closest('.shot').remove()"></a>
+        </figure>
+        <div>
+          <span class="badge">Talk · Marina Room</span>
+          <div><span class="when">March 20–21, 2026 · Marina del Rey, CA</span></div>
+          <h3>AIM 2026: Artificial Intelligence in Management Conference</h3>
+          <p class="org">The Sixth AIM Conference · USC Marshall School of Business</p>
+          <p>Presented <em>Comparative Analysis of Chatbot Architectures with and without Memory</em>: whether long-term memory makes chatbots meaningfully better, and what that means for the cost and energy of AI systems.</p>
+          <a class="link" href="images/aim-2026-slides.pdf" target="_blank" rel="noopener">View the slides (PDF) ›</a>
+          &nbsp;&nbsp;
+          <a class="link" href="https://sites.google.com/view/aimanagement/aim2026" target="_blank" rel="noopener">Conference website ›</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="internships">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Industry & Research</p>
+      <h2>Internships</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="interns">
+      <article class="intern">
+        <span class="when">Dec 2025 — Present</span>
+        <h3>AI Automation & Systems Intern</h3>
+        <p class="org">Synthesis AI · New York, NY</p>
+        <ul>
+          <li>Configure, test and validate AI voice automation workflows</li>
+          <li>Build backend logic scripts and configuration pipelines</li>
+          <li>Deliver customized AI voice solutions for 20+ clients using Git/GitHub</li>
+        </ul>
+      </article>
+      <article class="intern">
+        <span class="when">Jul 2026 — Sep 2026</span>
+        <h3>Manufacturing Intern</h3>
+        <p class="org">Bhola Maharaj · Jamshedpur, India</p>
+        <ul>
+          <li>Standardized recipes and production processes at a 95-year-old food manufacturer</li>
+          <li>Wrote formulations and process specs for consistent quality across batches</li>
+          <li>Introduced automation to cut manual effort in production</li>
+        </ul>
+      </article>
+      <article class="intern">
+        <span class="when">Jul 2025 — Aug 2025</span>
+        <h3>Research Intern</h3>
+        <p class="org">UCSB Summer Research Program & KSE Global</p>
+        <ul>
+          <li>Mentored 16 international students in machine learning and data science</li>
+          <li>Taught Python, pandas, scikit-learn and matplotlib through hands-on projects</li>
+        </ul>
+        <span class="award">★ Best Intern Award</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="block tint" id="experience">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Experience</p>
+      <h2>Roles & Leadership</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="exp">
+      <div class="job"><span class="when">Aug 2026 — Present</span><h3>Avionics Team Member</h3><p class="org">Gaucho Rocket Project · UCSB</p><p>FPGA and STM32 avionics, flight telemetry, sensor integration and data acquisition hardware.</p></div>
+      <div class="job"><span class="when">Oct 2025 — Present</span><h3>Research Assistant</h3><p class="org">High Energy Physics · UCSB Physics</p><p>MilliQan detector research on how temperature affects muon detector readings, with insights projected to improve data quality at the CERN detector by about 3%.</p></div>
+      <div class="job"><span class="when">Jul 2025 — Present</span><h3>Research Branch Officer</h3><p class="org">ACM at UCSB</p><p>Mentor 15 students in research, run biweekly research symposiums with faculty, and edit the monthly newsletter.</p></div>
+      <div class="job"><span class="when">Sep 2025 — Present</span><h3>Resident Assistant</h3><p class="org">UC Santa Barbara Housing</p><p>Primary resource for 76 residents: community programs, conflict resolution and student support.</p></div>
+      <div class="job"><span class="when">Sep 2024 — Present</span><h3>Member, Tesla Coil Project</h3><p class="org">IEEE at UCSB</p><p>Testing and troubleshooting team: oscillation frequency tuning and insulation checks for safe high-voltage operation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="certifications">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Credentials</p>
+      <h2>Certifications</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="certs">
+      <div class="cert-main">
+        <figure class="shot">
+          <a href="images/mit-certificate.jpg" target="_blank" rel="noopener"><img src="images/mit-certificate.jpg" alt="Certificate: Data Science and Machine Learning by MIT IDSS, awarded to Aryan Gautam, September 2025" onerror="this.closest('.shot').classList.add('empty');this.remove()"></a>
+          <div class="ph"><code>images/mit-certificate.jpg</code></div>
+        </figure>
+        <h3>Data Science and Machine Learning: Making Data-Driven Decisions</h3>
+        <p>MIT Institute for Data, Systems, and Society · MIT Schwarzman College of Computing · September 2025</p>
+        <a class="link" href="https://www.mygreatlearning.com/certificate/RUZGLTRS" target="_blank" rel="noopener">Verify certificate ›</a>
+      </div>
+      <ul class="cert-list">
+        <li><span>International Applied Artificial Intelligence Institute, Level 1</span><span class="yr">2025</span></li>
+        <li><span>Adult First Aid / CPR / AED · American Red Cross</span><span class="yr">2025</span></li>
+        <li><span>Google Advanced Data Analytics Specialization</span><span class="yr">2023</span></li>
+        <li><span>AI for Business Specialization · University of Pennsylvania</span><span class="yr">2023</span></li>
+        <li><span>AI in Healthcare Specialization · Stanford University</span><span class="yr">2023</span></li>
+        <li><span>Google Data Analytics Specialization</span><span class="yr">2023</span></li>
+        <li><span>IBM Cybersecurity Analyst Specialization</span><span class="yr">2023</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block tint" id="skills">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker">Toolkit</p>
+      <h2>Technical Skills</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="skills">
+      <div class="skillset"><h3>Hardware</h3><ul><li>STM32 · ESP32 · Arduino</li><li>FPGA</li><li>KiCad PCB design</li><li>Embedded systems</li><li>Computer architecture</li></ul></div>
+      <div class="skillset"><h3>Languages</h3><ul><li>Python</li><li>C++</li><li>SQL</li><li>R</li><li>JavaScript</li></ul></div>
+      <div class="skillset"><h3>AI & Data</h3><ul><li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>pandas</li><li>Data analysis</li></ul></div>
+      <div class="skillset"><h3>Software & Tools</h3><ul><li>React · Flask</li><li>Git & GitHub</li><li>Linux / Unix</li><li>Docker</li><li>CAD</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <p class="kicker">Get in Touch</p>
+      <h2>Thanks for visiting <em>Gautam City.</em></h2>
+      <p>The door's always open. If you want to build something, research something, or just talk rockets, detectors, or AI, I'd love to hear from you.</p>
+      <span class="email">aryangautam@ucsb.edu</span>
+    </div>
+    <div class="btns">
+      <a class="btn gold" href="mailto:aryangautam@ucsb.edu">Email Me</a>
+      <a class="btn" href="images/aryan-gautam-cv.pdf" target="_blank" rel="noopener">CV</a>
+      <a class="btn" href="https://www.linkedin.com/in/gautam1974/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/AryanGautam842" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Aryan Gautam · Gautam City</span>
+    <span>Computer Engineering · UC Santa Barbara</span>
+  </div>
+</footer>
+
+</body>
+</html>
